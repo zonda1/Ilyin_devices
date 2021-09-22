@@ -1,0 +1,19 @@
+.main {
+
+  &-header {
+    // display: none;
+    position: fixed;
+    z-index: 2;
+  }
+
+  &-nav {}
+}
+
+.nav {
+
+  &__list {
+    @extend %list-reset;
+  }
+
+  &__link {}
+}
