@@ -1,19 +1,142 @@
-.main {
+.main-header {
+  position: absolute;
+  width: 100%;
+  z-index: 2;
 
-  &-header {
-    // display: none;
-    position: fixed;
-    z-index: 2;
+  &__row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media (max-width:$tablet-max-width) {
+      justify-content: flex-end;
+    }
   }
-
-  &-nav {}
 }
 
+.header-menu {}
+
+.menu {
+
+  &__burger {
+    @media (max-width:$tablet-max-width) {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 50px;
+      height: 50px;
+      cursor: pointer;
+      background-color: $azure;
+      padding: 18px;
+      z-index: 5;
+
+      &.no-js {
+        display: none;
+      }
+
+      span {
+        position: absolute;
+        top: 24.75px;
+        left: 13.5px;
+        width: 22.5px;
+        height: 1px;
+        background-color: $black;
+
+        &:first-child {
+          top: 18.5px;
+        }
+
+        &:last-child {
+          top: auto;
+          bottom: 18px;
+        }
+      }
+
+      &.active {
+        background-color: transparent;
+
+        span {
+          background-color: rgba($grey-2, 0.2);
+          transform: scale(0);
+
+          &:first-child {
+            transform: rotate(45deg);
+            top: 24px;
+          }
+
+          &:last-child {
+            transform: rotate(-45deg);
+            bottom: 24.5px;
+          }
+        }
+      }
+
+
+    }
+  }
+}
+
+.menu__nav {}
+
 .nav {
+  padding: 0 21px;
+  border-bottom: 1px solid rgba($white, 0.2);
 
   &__list {
     @extend %list-reset;
+    display: flex;
+    flex-wrap: wrap;
   }
 
-  &__link {}
+  &__link {
+    @include font-parametrs(300, 16px, 32px);
+    letter-spacing: -0.005em;
+    @include rgba($white, 0.7);
+    padding-right: 135px;
+  }
+
+  &__item:last-child {
+    .nav__link {
+      padding-right: 0;
+    }
+  }
+}
+
+@media (max-width:$tablet-max-width) {
+
+  .nav {
+    transform: translate(0, -100%);
+    width: 320px;
+    padding: 100px 0 138px 0;
+    background-color: $white;
+
+    &__list {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__item {
+      display: flex;
+      align-items: center;
+      height: 60px;
+      background-color: $grey;
+      margin-bottom: 30px;
+    }
+
+    &__link {
+      @include font-parametrs(400, 20px, 28px);
+      letter-spacing: normal;
+      @include rgba($dark-3, 0.7);
+      padding-right: 0;
+    }
+
+    &.active {
+      transform: translate(0, 0);
+    }
+
+    &.no-js {
+      transform: translate(0, 0);
+    }
+  }
 }
