@@ -1,12 +1,28 @@
 .intro {
+  flex: 1 0 50%;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+
+  @media (max-width:$tablet-max-width) {
+    flex-basis: 100%;
+    text-align: center;
+  }
 
   &__headtitle {
     @include font-parametrs(600, 46px, 64px);
     letter-spacing: -0.005em;
     margin: 30.7px 0px 24px 0px;
+    color: $white;
+
+    @media (max-width:$tablet-max-width) {
+      @include font-parametrs(600, 30px, 42px);
+      margin: 88.7px 0px 20px 0px;
+    }
+
+    @media (max-width:$mobile-max-width) {
+      margin: 74.7px 0px 20px 0px;
+    }
   }
 
   &__description {
@@ -14,10 +30,26 @@
     @include rgba ($white, 0.8);
     letter-spacing: -0.005em;
     margin: 0px 0px 0px 0px;
+    padding: 0px 45px 0px;
+
+    @media (max-width:$tablet-max-width) {
+      @include font-parametrs(300, 18px, 32px);
+      margin: 0px 0px 150px 0px;
+    }
+
+    @media (max-width:$mobile-max-width) {
+      margin: 0px 0px 160px 0px;
+    }
   }
 
   &__logo {
     order: -1;
+
+    @media (max-width:$tablet-max-width) {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
   }
 
   &__logo-pic {}
