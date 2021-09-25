@@ -1,0 +1,37 @@
+.contact {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (max-width:$mobile-max-width) {
+    display: block;
+    text-align: center;
+    margin-bottom: 51px;
+  }
+
+  & a {
+    @include rgba($black, 0.5);
+  }
+
+  &__email {
+    @include font-parametrs(400, 16px, 22px);
+    padding-left: 41px;
+    background-image: url("../../img/icons/email.svg");
+    background-repeat: no-repeat;
+  }
+
+  &__tel {
+    @include font-parametrs(400, 16px, 32px);
+    padding-left: 37px;
+    line-height: 32px;
+    background-image: url("../../img/icons/phone.svg");
+    background-repeat: no-repeat;
+    background-position-y: 3px;
+
+    @media (max-width:$mobile-max-width) {
+      background-position-y: -1px;
+    }
+  }
+
+}

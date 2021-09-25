@@ -1,6 +1,7 @@
 .main-content {
   position: relative;
   top: -507px;
+  margin-bottom: -280px;
 
   @media (max-width:$tablet-max-width) {
     top: -320px;
