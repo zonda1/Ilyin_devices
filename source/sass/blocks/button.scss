@@ -1,0 +1,8 @@
+.button {
+  height: 51px;
+  background-color: $azure;
+  @include font-parametrs(600, 15px, 21px);
+  color: $black;
+  border: 0;
+  border-radius: 6px;
+}

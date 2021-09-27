@@ -1,20 +1,20 @@
 .main-screen {
-  flex: 1 0 100%;
+  flex: 1 0 825px;
   position: relative;
 
   &__bg {
     position: absolute;
     width: 100%;
-    height: 825px;
+    height: 100%;
     top: 0;
     left: 0;
+  }
 
-    @media (max-width:$tablet-max-width) {
-      height: 340px;
-    }
+  @media (max-width:$tablet-max-width) {
+    flex-basis: 340px;
+  }
 
-    @media (max-width:$mobile-max-width) {
-      height: 390px;
-    }
+  @media (max-width:$mobile-max-width) {
+    flex-basis: 390px;
   }
 }
