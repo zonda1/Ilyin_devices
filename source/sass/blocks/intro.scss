@@ -1,23 +1,27 @@
 .intro {
-  flex: 1 0 50%;
+  flex: 0 1 45%;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  align-items: flex-start;
+  // margin-right: 160px;
 
   @media (max-width:$tablet-max-width) {
     flex-basis: 100%;
+    align-items: center;
     text-align: center;
   }
 
   &__headtitle {
+    font-family: "Open Sans", "Arial", sans-serif;
     @include font-parametrs(600, 46px, 64px);
-    letter-spacing: -0.005em;
-    margin: 30.7px 0px 24px 0px;
+    letter-spacing: 0.01em;
+    margin: 25px 0px 24px 0px;
     color: $white;
 
     @media (max-width:$tablet-max-width) {
       @include font-parametrs(600, 30px, 42px);
-      margin: 88.7px 0px 20px 0px;
+      margin: 115px 0px 20px 0px;
     }
 
     @media (max-width:$mobile-max-width) {
@@ -30,15 +34,19 @@
     @include rgba ($white, 0.8);
     letter-spacing: -0.005em;
     margin: 0px 0px 0px 0px;
-    padding: 0px 45px 0px;
+    padding: 0px 0px 0px;
 
     @media (max-width:$tablet-max-width) {
       @include font-parametrs(300, 18px, 32px);
-      margin: 0px 0px 150px 0px;
+      margin: 0px 0px 145px 0px;
+
+      & br {
+        display: none;
+      }
     }
 
     @media (max-width:$mobile-max-width) {
-      margin: 0px 0px 160px 0px;
+      margin: 0px 0px 158px 0px;
     }
   }
 
@@ -48,9 +56,15 @@
     @media (max-width:$tablet-max-width) {
       position: absolute;
       top: 0;
-      left: 0;
+      left: 20px;
+
+    }
+
+    @media (max-width:$mobile-max-width) {
+      position: absolute;
+      top: -28px;
+      left: 15px;
+
     }
   }
-
-  &__logo-pic {}
 }

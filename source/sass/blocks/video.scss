@@ -1,0 +1,167 @@
+.video {
+  background-color: $dark-4;
+  margin: 0px 0px 95px 0px;
+
+  @media (max-width:$tablet-max-width) {
+    margin: 0px 0px 85px 0px;
+  }
+
+
+  &__wrapper {
+    max-width: 929px;
+    margin: 0 auto;
+
+    @media (max-width:$tablet-max-width) {
+      max-width: 503px;
+    }
+
+    @media (max-width:$mobile-max-width) {
+      max-width: 288px;
+    }
+  }
+
+  &__feature {
+    // width: 100%;
+    // height: 100%;
+    // position: relative;
+    // top: 0;
+    // left: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    height: 706px;
+
+    @media (max-width:$tablet-max-width) {
+      height: 413px;
+      // margin: 0px 0px 85px 0px;
+    }
+
+    @media (max-width:$mobile-max-width) {
+      height: 384px;
+      // margin: 0px 0px 85px 0px;
+    }
+  }
+
+  &__descp {}
+
+  &__title {
+    @include font-parametrs(600, 30px, 30px);
+    letter-spacing: -0.005em;
+    color: $white;
+    margin: 120px 0px 20px 0px;
+
+    @media (max-width:$tablet-max-width) {
+      font-size: 24px;
+      margin: 70px 0px 20px 0px;
+    }
+
+    @media (max-width:$mobile-max-width) {
+
+      margin: 84px 0px 20px 0px;
+    }
+  }
+
+  &__subtitle {
+    @include font-parametrs(300, 16px, 28px);
+    letter-spacing: -0.005em;
+    @include rgba($white, 0.7);
+    margin: 0px 0px 56px 0px;
+
+    & br:last-child {
+      display: none;
+    }
+
+    @media (max-width:$tablet-max-width) {
+      & br:last-child {
+        display: block;
+      }
+
+      & br:first-child {
+        display: none;
+      }
+
+      margin: 0px 0px 40px 0px;
+    }
+
+    @media (max-width:$mobile-max-width) {
+      & br:last-child {
+        display: none;
+      }
+
+      margin: 0px 0px 54px 0px;
+    }
+  }
+
+  &__content {
+    flex: 1 0 522px;
+    position: relative;
+
+    @media (max-width:$tablet-max-width) {
+      flex-basis: 282px;
+    }
+
+    @media (max-width:$mobile-max-width) {
+      flex-basis: 161.66px;
+    }
+  }
+
+  &__ibg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0;
+
+    .video__logo {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-51%, -48%);
+      cursor: pointer;
+
+      @media (max-width:$tablet-max-width) {
+        transform: translate(-50%, -48%);
+        width: 90.36px;
+        height: 90.36px;
+      }
+
+      @media (max-width:$mobile-max-width) {
+        transform: translate(-50%, -52%);
+        width: 65px;
+        height: 65px;
+      }
+    }
+
+    @media (max-width:$tablet-max-width) {
+      top: 0px;
+    }
+
+    .video__pic {
+      @media (max-width:$tablet-max-width) {
+        width: 503px;
+        height: 282px;
+      }
+
+      @media (max-width:$mobile-max-width) {
+        width: 288px;
+        height: 161.66px;
+      }
+    }
+  }
+
+  // .ibg {
+  //   @media (max-width:$tablet-max-width) {
+  //     background-image: url("../../img/content/bike-video_tablet.jpg");
+  //   }
+  // }
+}
+
+
+// img {
+//     position: absolute;
+//     width: 100%;
+//     height: 100%;
+//     top: 200px;
+//     left: 0;
+//   }
+// }

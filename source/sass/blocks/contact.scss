@@ -1,13 +1,108 @@
 .contact {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  // justify-content: space-between;
+  // align-items: center;
+  text-align: center;
 
-  @media (max-width:$mobile-max-width) {
-    display: block;
-    text-align: center;
-    margin-bottom: 51px;
+  // @media (max-width:$mobile-max-width) {
+  //   display: block;
+  //   text-align: center;
+  //   margin-bottom: 51px;
+  // }
+
+  &__title {
+    @include font-parametrs(600, 30px, 30px);
+    letter-spacing: -0.005em;
+    color: $dark-1;
+    margin: 153px 0px 30px 0px;
+
+    @media (max-width:$tablet-max-width) {
+      font-size: 24px;
+      margin: 70px 0px 20px 0px;
+    }
+
+    @media (max-width:$mobile-max-width) {
+      font-size: 18px;
+      margin: 35px 0px 20px 0px;
+
+    }
+  }
+
+  &__subtitle {
+    @include font-parametrs(400, 17px, 31px);
+    @include rgba($black, 0.7);
+    margin: 0px 0px 42px 0px;
+
+    @media (max-width:$tablet-max-width) {
+      margin: 0px 0px 20px 0px;
+
+      & br {
+        display: none;
+      }
+    }
+
+    @media (max-width:$mobile-max-width) {
+      margin: 0px 0px 18px 0px;
+      padding: 0 30px;
+
+      & br {
+        display: block;
+      }
+    }
+  }
+
+  &__map {
+    display: flex;
+    margin: 0px 0px 39px 0px;
+
+    @media (max-width:$tablet-max-width) {
+
+      margin: 0px 0px 24px 0px;
+    }
+
+    @media (max-width:$mobile-max-width) {
+
+      margin: 0px 0px 31px 0px;
+    }
+
+    iframe {
+      @media (max-width:$tablet-max-width) {
+        width: 698px;
+        height: 545px;
+      }
+    }
+
+    iframe {
+      @media (max-width:$mobile-max-width) {
+        width: 320px;
+        height: 250px;
+      }
+    }
+  }
+
+  &__links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0px 212px 0px 195px;
+    margin: 0px 0px 98px 0px;
+
+    @media (max-width:$tablet-max-width) {
+      padding: 0px 81px 0px 70px;
+      margin: 0px 0px 52.88px 0px;
+    }
+
+    @media (max-width:$mobile-max-width) {
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      height: 72px;
+      text-align: center;
+      padding: 0;
+      margin: 0px 0px 52.88px 0px;
+    }
   }
 
   & a {
@@ -19,6 +114,10 @@
     padding-left: 41px;
     background-image: url("../../img/icons/email.svg");
     background-repeat: no-repeat;
+
+    @media (max-width:$mobile-max-width) {
+      margin: 0px -3px 0px 0px;
+    }
   }
 
   &__tel {
@@ -28,10 +127,12 @@
     background-image: url("../../img/icons/phone.svg");
     background-repeat: no-repeat;
     background-position-y: 3px;
+    margin: -5px 0px 22px 0px;
+
 
     @media (max-width:$mobile-max-width) {
       background-position-y: -1px;
+      margin: 0px 0px 0px -10px;
     }
   }
-
 }

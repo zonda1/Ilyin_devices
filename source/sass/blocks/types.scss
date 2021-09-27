@@ -1,7 +1,15 @@
 .types {
-  // background-color: $grey-4;
-  // padding: 149px 0px 147px 0px;
-  // width: 100vw;
+  background-color: $grey-4;
+  padding: 149px 0px 149px 0px;
+  z-index: -2;
+
+  @media (max-width:$tablet-max-width) {
+    padding: 50px 0px 70px 0px;
+  }
+
+  @media (max-width:$mobile-max-width) {
+    padding: 50px 0px 15px 0px;
+  }
 
   &__wrapper {
     max-width: 1126px;
@@ -24,6 +32,11 @@
     letter-spacing: -0.005em;
     color: $dark-1;
     margin: 0px 0px 51px 0px;
+
+    @media (max-width:$tablet-max-width) {
+      @include font-parametrs(600, 24px, 41px);
+      margin: 0px 0px 30px 0px;
+    }
   }
 
   &__list {
@@ -37,13 +50,14 @@
 
     @media (max-width:$tablet-max-width) {
       grid-template-rows: auto auto;
-      grid-template-columns: repeat(2, auto);
+      grid-template-columns: repeat(2, 45.76%);
+      column-gap: 50px;
       row-gap: 50px;
     }
 
-    @media (max-width:1200px) {
-      column-gap: 0;
-    }
+    // @media (max-width:1200px) {
+    //   column-gap: 0;
+    // }
 
 
     @media (max-width:$mobile-max-width) {
@@ -57,12 +71,21 @@
     display: flex;
     flex-direction: column;
 
-    // @media (max-width:$mobile-max-width) {
-    //   width: 270px;
-    // }
+    @media (max-width:$tablet-max-width) {}
+
+
 
     &:first-child {
+      margin: 10px 0px 0px 0px;
       position: relative;
+
+      @media (max-width:$tablet-max-width) {
+        margin: 0px 0px 0px 0px;
+      }
+
+      @media (max-width:$mobile-max-width) {
+        margin: 0px 0px 40px 0px;
+      }
 
       &::before {
         content: "";
@@ -70,8 +93,7 @@
         width: 180px;
         height: 180px;
         top: 156px;
-        left: -90px;
-        // left: -17.5%;
+        left: -60px;
         background-image: url("../../img/icons/circle-180.png");
         z-index: -1;
 
@@ -79,20 +101,13 @@
           width: 127px;
           height: 127px;
           top: 201px;
-
           left: -37px;
-          // left: -13.7%;
           background-image: url("../../img/icons/circle-127.png");
           z-index: -1;
         }
 
         @media (max-width:$mobile-max-width) {
-
-          top: 201px;
-
-          // left: -8.9%;
-
-
+          left: -26px;
         }
       }
     }
@@ -105,14 +120,17 @@
         margin: 0px 0px 0px 0px;
       }
 
+      @media (max-width:$mobile-max-width) {
+        margin: 0px 0px 42px 0px;
+      }
 
       &::before {
         content: "";
         position: absolute;
         width: 47px;
         height: 47px;
-        top: -23.5px;
-        left: -23.5px;
+        top: -18px;
+        left: -18px;
         background-image: url("../../img/icons/rect-47.png");
         z-index: 3;
 
@@ -126,8 +144,8 @@
         position: absolute;
         width: 47px;
         height: 47px;
-        bottom: 47px;
-        right: -23.5px;
+        bottom: 30px;
+        right: -23px;
         background-image: url("../../img/icons/rect-47.png");
 
         @media (max-width:$tablet-max-width) {
@@ -140,14 +158,19 @@
     &:last-child {
       position: relative;
 
+      @media (max-width:$mobile-max-width) {
+        margin: 0px 0px 40px 0px;
+      }
+
       &::after {
         content: "";
         position: absolute;
         width: 95px;
         height: 95px;
-        top: -47.5px;
-        right: -47.5px;
+        top: -33px;
+        right: -36px;
         background-image: url("../../img/icons/circle-95.png");
+        overflow: hidden;
 
         @media (max-width:$tablet-max-width) {
           width: 68px;
@@ -155,13 +178,11 @@
           top: -20px;
           right: 135px;
           background-image: url("../../img/icons/circle-68.png");
-          z-index: -1;
+          z-index: 2;
         }
 
         @media (max-width:$mobile-max-width) {
-
           right: -15px;
-
         }
       }
     }
@@ -173,7 +194,7 @@
     @include font-parametrs(660, 22px, 34px);
     letter-spacing: -0.5px;
     color: $black;
-    margin: 20px 0px 0px 0px;
+    margin: 12px 0px 0px 0px;
   }
 }
 

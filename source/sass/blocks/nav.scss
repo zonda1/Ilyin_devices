@@ -1,0 +1,75 @@
+.nav {
+  padding: 0px 21px 6px 19px;
+  border-bottom: 1px solid rgba($white, 0.2);
+  margin: 18px 0px 0px 0px;
+
+  &__list {
+    @extend %list-reset;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__link {
+    @include font-parametrs(300, 16px, 32px);
+    letter-spacing: -0.005em;
+    @include rgba($white, 0.7);
+    padding-right: 135px;
+  }
+
+  &__item:last-child {
+    .nav__link {
+      padding-right: 0;
+    }
+  }
+}
+
+@media (max-width:$tablet-max-width) {
+
+  .nav {
+    transform: translate(0, -100%);
+    width: 320px;
+    padding: 100px 0 138px 0;
+    margin: 0px 0px 0px 0px;
+    background-color: $white;
+
+    &__list {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__item {
+      display: flex;
+      align-items: center;
+      height: 60px;
+      background-color: $grey;
+      margin-bottom: 30px;
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        right: 16px;
+        background: url("../../img/icons/arrow-right.png");
+        cursor: pointer;
+      }
+    }
+
+    &__link {
+      width: 100%;
+      @include font-parametrs(400, 20px, 28px);
+      letter-spacing: normal;
+      @include rgba($dark-3, 0.7);
+      padding-right: 0;
+      padding-left: 16px;
+    }
+
+    &.active {
+      transform: translate(0, 0);
+    }
+
+    &.no-js {
+      transform: translate(0, 0);
+    }
+  }
+}

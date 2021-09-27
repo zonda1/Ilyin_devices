@@ -1,16 +1,18 @@
 .form {
-  flex: 1 0 50%;
+  flex: 0 1 37.15%;
   text-align: center;
   display: grid;
   grid-template: 1/1/1/4;
   row-gap: 20px;
+  z-index: 3;
 
   @media (max-width:$tablet-max-width) {
-    padding: 0px 100px 0px;
+    padding: 0px 57px 0px;
   }
 
   @media (max-width:$mobile-max-width) {
-    padding: 0 16px 0;
+    row-gap: 0;
+    padding: 0;
   }
 
 
@@ -18,12 +20,18 @@
     @include font-parametrs(600, 17px, 28px);
     letter-spacing: -0.005em;
     color: $white;
-    margin: 4px 0px 0px 0px;
+    margin: 13px 0px 0px 0px;
+
 
     @media (max-width:$tablet-max-width) {
       font-size: 18px;
       color: black;
       margin: 4px 0px 10px 0px;
+    }
+
+    @media (max-width:$mobile-max-width) {
+
+      margin: 0px;
     }
   }
 
@@ -42,10 +50,22 @@
   box-sizing: border-box;
   border-radius: 6px;
 
+  @media (max-width:$mobile-max-width) {
+    margin: 0px 0px 20px 0px;
+  }
+
   &::placeholder {
     font-family: "Open Sans", "Arial", sans-serif;
     @include font-parametrs(400, 15px, 24px);
     @include rgba($dark-2, 0.5);
-    padding: 14px 0px 10px 30px;
+    padding: 25px 0px 0px 27px;
+
+    @media (max-width:$tablet-max-width) {
+      padding: 25px 0px 0px 17px;
+    }
+
+    @media (max-width:$mobile-max-width) {
+      padding: 25px 0px 0px 23px;
+    }
   }
 }

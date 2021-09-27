@@ -10,7 +10,7 @@
   }
 
   &__feature {
-    margin: 150px 0px 130px 0px;
+    margin: 150px 0px 150px 0px;
 
     @media (max-width:$tablet-max-width) {
       margin: 70px 0px 70px 0px;
@@ -26,6 +26,7 @@
 
     @media (max-width:$tablet-max-width) {
       @include font-parametrs(600, 24px, 41px);
+      margin: 0px 0px 30px 0px;
     }
 
     @media (max-width:$mobile-max-width) {
@@ -36,12 +37,15 @@
   &__list {
     @extend %list-reset;
     display: grid;
-    grid-template: auto/ repeat(4, 25%);
+    grid-template: auto/ repeat(4, auto);
     text-align: center;
+    column-gap: 38px;
     margin: 0px 0px 0px 0px;
 
     @media (max-width:$tablet-max-width) {
-      grid-template: auto auto/ repeat(2, 50%);
+      grid-template: auto auto/ repeat(2, auto);
+      column-gap: 30px;
+      row-gap: 40px;
     }
 
     @media (max-width:$mobile-max-width) {
@@ -54,7 +58,19 @@
   &__item {
     width: 263px;
 
+    &:first-child {
+      .facts__link {
+        @media (max-width:$mobile-max-width) {
+          margin: 0px 0px 2px 0px;
+        }
+      }
+    }
+
     @media (max-width:$mobile-max-width) {
+      height: 125px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
       margin: 0px 0px 35px 0px;
     }
   }
@@ -63,19 +79,22 @@
     @include font-parametrs(600, 28px, 38px);
     letter-spacing: -1.27273px;
     color: $azure;
-    margin: 0px 0px 30px 0px;
+    margin: 0px 0px 16px 0px;
 
     @media (max-width:$mobile-max-width) {
-      margin: 0px 0px 20px 0px;
+      margin: 0px 0px 0px 0px;
     }
   }
 
   &__link {
     letter-spacing: -0.5px;
     color: $black;
+
+    @media (max-width:$mobile-max-width) {
+      font-size: 18px;
+      margin: 0px 0px 12px 0px;
+    }
   }
 
-  @media (max-width:$mobile-max-width) {
-    font-size: 18px;
-  }
+
 }

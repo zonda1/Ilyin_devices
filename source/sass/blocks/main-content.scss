@@ -1,14 +1,16 @@
 .main-content {
   position: relative;
-  top: -507px;
-  margin-bottom: -280px;
+  top: -515px;
+  margin-bottom: -275px;
 
   @media (max-width:$tablet-max-width) {
     top: -320px;
+    margin-bottom: -320px;
   }
 
-  @media (max-width:$tablet-max-width) {
-    top: -380px;
+  @media (max-width:$mobile-max-width) {
+    top: -343px;
+    margin-bottom: -342px;
   }
 
   &__wrapper {
@@ -19,8 +21,12 @@
     justify-content: space-between;
 
     @media (max-width:$tablet-max-width) {
-      max-width: 525px;
+      max-width: 435px;
       justify-content: center;
+    }
+
+    @media (max-width:$mobile-max-width) {
+      max-width: 288px;
     }
   }
 }
