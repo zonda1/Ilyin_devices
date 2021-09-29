@@ -9,3 +9,9 @@
 @mixin rgba($color, $opacity) {
   color: rgba($color, $opacity);
 }
+
+@mixin list-reset() {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}

@@ -1,19 +1,18 @@
 .facts {
-
   &__wrapper {
     max-width: 1166px;
     margin: 0 auto;
 
-    @media (max-width:$tablet-max-width) {
+    @media (max-width: $tablet-max-width) {
       max-width: 556px;
     }
   }
 
   &__feature {
-    margin: 150px 0px 150px 0px;
+    margin: 150px 0 150px 0;
 
-    @media (max-width:$tablet-max-width) {
-      margin: 70px 0px 70px 0px;
+    @media (max-width: $tablet-max-width) {
+      margin: 70px 0 70px 0;
     }
   }
 
@@ -22,33 +21,33 @@
     letter-spacing: -0.005em;
     color: $dark-1;
     text-align: center;
-    margin: 0px 0px 50px 0px;
+    margin: 0 0 50px 0;
 
-    @media (max-width:$tablet-max-width) {
+    @media (max-width: $tablet-max-width) {
       @include font-parametrs(600, 24px, 41px);
-      margin: 0px 0px 30px 0px;
+      margin: 0 0 30px 0;
     }
 
-    @media (max-width:$mobile-max-width) {
-      margin: 0px 0px 30px 0px;
+    @media (max-width: $mobile-max-width) {
+      margin: 0 0 30px 0;
     }
   }
 
   &__list {
-    @extend %list-reset;
+    @include list-reset();
     display: grid;
     grid-template: auto/ repeat(4, auto);
     text-align: center;
     column-gap: 38px;
-    margin: 0px 0px 0px 0px;
+    margin: 0;
 
-    @media (max-width:$tablet-max-width) {
+    @media (max-width: $tablet-max-width) {
       grid-template: auto auto/ repeat(2, auto);
       column-gap: 30px;
       row-gap: 40px;
     }
 
-    @media (max-width:$mobile-max-width) {
+    @media (max-width: $mobile-max-width) {
       display: block;
       max-width: 263px;
       margin: 0 auto;
@@ -60,18 +59,18 @@
 
     &:first-child {
       .facts__link {
-        @media (max-width:$mobile-max-width) {
-          margin: 0px 0px 2px 0px;
+        @media (max-width: $mobile-max-width) {
+          margin: 0 0 2px 0;
         }
       }
     }
 
-    @media (max-width:$mobile-max-width) {
+    @media (max-width: $mobile-max-width) {
       height: 125px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      margin: 0px 0px 35px 0px;
+      margin: 0 0 35px 0;
     }
   }
 
@@ -79,10 +78,10 @@
     @include font-parametrs(600, 28px, 38px);
     letter-spacing: -1.27273px;
     color: $azure;
-    margin: 0px 0px 16px 0px;
+    margin: 0 0 16px 0;
 
-    @media (max-width:$mobile-max-width) {
-      margin: 0px 0px 0px 0px;
+    @media (max-width: $mobile-max-width) {
+      margin: 0;
     }
   }
 
@@ -90,11 +89,9 @@
     letter-spacing: -0.5px;
     color: $black;
 
-    @media (max-width:$mobile-max-width) {
+    @media (max-width: $mobile-max-width) {
       font-size: 18px;
-      margin: 0px 0px 12px 0px;
+      margin: 0 0 12px 0;
     }
   }
-
-
 }

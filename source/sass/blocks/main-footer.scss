@@ -1,14 +1,13 @@
 .main-footer {
-
   &__wrapper {
     max-width: 957px;
     margin: 0 auto;
 
-    @media (max-width:$tablet-max-width) {
+    @media (max-width: $tablet-max-width) {
       max-width: 698px;
     }
 
-    @media (max-width:$mobile-max-width) {
+    @media (max-width: $mobile-max-width) {
       max-width: 320px;
     }
   }
