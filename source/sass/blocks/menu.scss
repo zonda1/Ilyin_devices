@@ -1,7 +1,6 @@
 .menu {
-
   &__burger {
-    @media (max-width:$tablet-max-width) {
+    @media (max-width: $tablet-max-width) {
       display: block;
       position: absolute;
       top: 0;

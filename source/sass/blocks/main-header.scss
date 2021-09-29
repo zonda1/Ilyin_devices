@@ -8,7 +8,7 @@
     justify-content: center;
     align-items: center;
 
-    @media (max-width:$tablet-max-width) {
+    @media (max-width: $tablet-max-width) {
       justify-content: flex-end;
     }
   }

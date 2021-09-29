@@ -3,12 +3,12 @@
   top: -515px;
   margin-bottom: -275px;
 
-  @media (max-width:$tablet-max-width) {
+  @media (max-width: $tablet-max-width) {
     top: -320px;
     margin-bottom: -320px;
   }
 
-  @media (max-width:$mobile-max-width) {
+  @media (max-width: $mobile-max-width) {
     top: -343px;
     margin-bottom: -342px;
   }
@@ -20,12 +20,12 @@
     flex-wrap: wrap;
     justify-content: space-between;
 
-    @media (max-width:$tablet-max-width) {
+    @media (max-width: $tablet-max-width) {
       max-width: 435px;
       justify-content: center;
     }
 
-    @media (max-width:$mobile-max-width) {
+    @media (max-width: $mobile-max-width) {
       max-width: 288px;
     }
   }

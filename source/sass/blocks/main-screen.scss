@@ -10,11 +10,11 @@
     left: 0;
   }
 
-  @media (max-width:$tablet-max-width) {
+  @media (max-width: $tablet-max-width) {
     flex-basis: 340px;
   }
 
-  @media (max-width:$mobile-max-width) {
+  @media (max-width: $mobile-max-width) {
     flex-basis: 390px;
   }
 }

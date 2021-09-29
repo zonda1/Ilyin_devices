@@ -1,10 +1,10 @@
 .nav {
-  padding: 0px 21px 6px 19px;
+  padding: 0 21px 6px 19px;
   border-bottom: 1px solid rgba($white, 0.2);
-  margin: 18px 0px 0px 0px;
+  margin: 18px 0 0 0;
 
   &__list {
-    @extend %list-reset;
+    @include list-reset();
     display: flex;
     flex-wrap: wrap;
   }
@@ -12,6 +12,7 @@
   &__link {
     @include font-parametrs(300, 16px, 32px);
     letter-spacing: -0.005em;
+
     @include rgba($white, 0.7);
     padding-right: 135px;
   }
@@ -23,13 +24,12 @@
   }
 }
 
-@media (max-width:$tablet-max-width) {
-
+@media (max-width: $tablet-max-width) {
   .nav {
     transform: translate(0, -100%);
     width: 320px;
     padding: 100px 0 138px 0;
-    margin: 0px 0px 0px 0px;
+    margin: 0 0 0 0;
     background-color: $white;
 
     &__list {
@@ -57,8 +57,10 @@
 
     &__link {
       width: 100%;
+
       @include font-parametrs(400, 20px, 28px);
       letter-spacing: normal;
+
       @include rgba($dark-3, 0.7);
       padding-right: 0;
       padding-left: 16px;
