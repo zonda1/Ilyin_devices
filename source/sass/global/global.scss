@@ -1,3 +1,4 @@
+
 body {
   height: 100%;
   box-sizing: border-box;
@@ -47,10 +48,4 @@ a {
   clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
-}
-
-%list-reset {
-  padding: 0;
-  margin: 0;
-  list-style: none;
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html style="scroll-behavior: smooth;" lang="ru">
 
 <head>
   <meta charset="UTF-8">
@@ -23,16 +23,16 @@
             <nav class="menu__nav nav no-js">
               <ul class="nav__list">
                 <li class="nav__item">
-                  <a href="#!" class="nav__link">О нас</a>
+                  <a href="#facts" class="nav__link">О нас</a>
                 </li>
                 <li class="nav__item">
-                  <a href="#!" class="nav__link">Виды велосипедов</a>
+                  <a href="#types" class="nav__link">Виды велосипедов</a>
                 </li>
                 <li class="nav__item">
-                  <a href="#!" class="nav__link">Видео про велосипеды</a>
+                  <a href="#video" class="nav__link">Видео про велосипеды</a>
                 </li>
                 <li class="nav__item">
-                  <a href="#!" class="nav__link">Контакты</a>
+                  <a href="#contact" class="nav__link">Контакты</a>
                 </li>
               </ul>
             </nav>
@@ -42,12 +42,8 @@
 
       <div class="main-screen">
         <div class="main-screen__bg ibg">
-          <picture>
-            <source media="(max-width:767px)" srcset="img/content/main-photo_mobile.jpg">
-            <source media="(max-width:1023px)" srcset="img/content/main-photo_tablet.jpg">
-            <img src="img/content/main-photo_dktp.jpg" width="1440" height="825"
-              alt="Стильный велосипед с большими колесами">
-          </picture>
+          <img src="img/content/main-photo_dktp.jpg" width="1440" height="825"
+            alt="Стильный велосипед с большими колесами">
         </div>
       </div>
 
@@ -65,7 +61,8 @@
           <form action="https://echo.htmlacademy.ru" class="form" method="POST" autocomplete="off">
             <h2 class="form__title">Заполните поля ниже и мы подберем велосипед Вашей мечты</h2>
             <label for="name">
-              <input class="form__name" type="text" name="name" id="name" placeholder="Введите Ваше Имя" required>
+              <input class="form__name" type="text" name="name" id="name" placeholder="Введите Ваше Имя" required
+                minlength="5" maxlength="30">
             </label>
             <label for="tel">
               <input class="form__tel" type="tel" name="tel" id="tel" placeholder="Введите Ваш номер телефона" required>
@@ -75,7 +72,7 @@
         </div>
       </section>
 
-      <section class="facts">
+      <section class="facts" id="facts">
         <div class="facts__wrapper">
           <div class="facts__feature">
             <h2 class="facts__title">Несколько фактов о нас
@@ -104,29 +101,47 @@
         </div>
       </section>
 
-      <section class="types">
+      <section class="types" id="types">
         <div class="types__wrapper">
           <div class="types__feature">
             <h2 class="types__title">Виды велосипедов</h2>
             <ul class="types__list">
               <li class="types__item ">
                 <picture>
-                  <source media="(max-width:1023px)" srcset="img/content/bike-1_tablet&mobile.jpg">
-                  <img src="img/content/bike-1_dktp.jpg" width="342" height="503" alt="Дорожный велосипед">
+                  <source type="image/webp" media="(max-width:1023px)"
+                    srcset="img/content/bike-1_tablet&mobile.webp 1x, img/content/bike-1_tablet&mobile@2x.webp 2x">
+                  <source type="image/webp"
+                    srcset="img/content/bike-1_dktp.webp 1x, img/content/bike-1_dktp@2x.webp 2x">
+                  <source media="(max-width:1023px)"
+                    srcset="img/content/bike-1_tablet&mobile.jpg 1x, img/content/bike-1_tablet&mobile@2x.jpg 2x">
+                  <img src="img/content/bike-1_dktp.jpg 1x" srcset="img/content/bike-1_dktp@2x.jpg 2x" width="342"
+                    height="503" alt="Дорожный велосипед">
                 </picture>
                 <p class="types__look">Дорожный велосипед</p>
               </li>
               <li class="types__item">
                 <picture>
-                  <source media="(max-width:1023px)" srcset="img/content/bike-2_tablet&mobile.jpg">
-                  <img src="img/content/bike-2_dktp.jpg" width="342" height="566" alt="Горный велосипед">
+                  <source type="image/webp" media="(max-width:1023px)"
+                    srcset="img/content/bike-2_tablet&mobile.webp 1x, img/content/bike-2_tablet&mobile@2x.webp 2x">
+                  <source type="image/webp"
+                    srcset="img/content/bike-2_dktp.webp 1x, img/content/bike-2_dktp@2x.webp 2x">
+                  <source media="(max-width:1023px)"
+                    srcset="img/content/bike-2_tablet&mobile.jpg 1x, img/content/bike-2_tablet&mobile@2x.jpg 2x">
+                  <img src="img/content/bike-2_dktp.jpg 1x" srcset="img/content/bike-2_dktp@2x.jpg 2x" width="342"
+                    height="566" alt="Горный велосипед">
                 </picture>
                 <p class="types__look">Горный велосипед</p>
               </li>
               <li class="types__item">
                 <picture>
-                  <source media="(max-width:1023px)" srcset="img/content/bike-3_tablet&mobile.jpg">
-                  <img src="img/content/bike-3_dktp.jpg" width="342" height="513" alt="Детский велосипед">
+                  <source type="image/webp" media="(max-width:1023px)"
+                    srcset="img/content/bike-3_tablet&mobile.webp 1x, img/content/bike-3_tablet&mobile@2x.webp 2x">
+                  <source type="image/webp"
+                    srcset="img/content/bike-3_dktp.webp 1x, img/content/bike-3_dktp@2x.webp 2x">
+                  <source media="(max-width:1023px)"
+                    srcset="img/content/bike-3_tablet&mobile.jpg 1x, img/content/bike-3_tablet&mobile@2x.jpg 2x">
+                  <img src="img/content/bike-3_dktp.jpg 1x" srcset="img/content/bike-3_dktp@2x.jpg 2x" width="342"
+                    height="513" alt="Детский велосипед">
                 </picture>
                 <p class="types__look">Детский велосипед</p>
               </li>
@@ -135,7 +150,7 @@
         </div>
       </section>
 
-      <section class="video">
+      <section class="video" id="video">
         <div class="video__wrapper">
           <div class="video__feature">
             <div class="video__descp">
@@ -147,10 +162,19 @@
             <div class="video__content">
               <div class="video__ibg">
                 <picture>
-                  <source media="(max-width:767px)" srcset="img/content/bike-video_mobile.jpg ">
-                  <source media="(max-width:1023px)" srcset="img/content/bike-video_tablet.jpg ">
-                  <img class="video__pic" src="img/content/bike-video_dktp.jpg" width="929" height="522"
-                    alt="Крутой велосипед">
+                  <source type="image/webp" media="(max-width:727px)"
+                    srcset="img/content/bike-video_mobile.webp 1x, img/content/bike-video_mobile@2x.webp 2x">
+                  <source type="image/webp" media="(max-width:1023px)"
+                    srcset="img/content/bike-video_tablet.webp 1x, img/content/bike-video_tablet@2x.webp 2x">
+                  <source type="image/webp"
+                    srcset="img/content/bike-video_dktp.webp 1x, img/content/bike-video_dktp@2x.webp 2x">
+
+                  <source media="(max-width:767px)"
+                    srcset="img/content/bike-video_mobile.jpg 1x, img/content/bike-video_mobile@2x.jpg 2x ">
+                  <source media="(max-width:1023px)"
+                    srcset="img/content/bike-video_tablet.jpg 1x, img/content/bike-video_tablet@2x.jpg 2x ">
+                  <img class="video__pic" src="img/content/bike-video_dktp.jpg 1x"
+                    srcset="img/content/bike-video_dktp@2x.jpg 2x" width="929" height="522" alt="Крутой велосипед">
                 </picture>
                 <span><img class="video__logo" src="img/icons/press-play.svg" alt="Нажать проигрывание"></span>
               </div>
@@ -160,7 +184,7 @@
       </section>
 
       <footer class="main-footer">
-        <div class="main-footer__wrapper contact">
+        <div class="main-footer__wrapper contact" id="contact">
           <h2 class="contact__title">
             Как нас найти?
           </h2>
@@ -181,7 +205,6 @@
     </main>
   </div>
   <script src="js/menu.min.js"></script>
-
 </body>
 
 </html>
