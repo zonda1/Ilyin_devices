@@ -101,7 +101,7 @@
   &__email {
     @include font-parametrs(400, 16px, 22px);
     padding-left: 41px;
-    background-image: url("../../img/icons/email.svg");
+    background-image: url("../img/icons/email.svg");
     background-repeat: no-repeat;
 
     @media (max-width: $mobile-max-width) {
@@ -113,7 +113,7 @@
     @include font-parametrs(400, 16px, 32px);
     padding-left: 37px;
     line-height: 32px;
-    background-image: url("../../img/icons/phone.svg");
+    background-image: url("../img/icons/phone.svg");
     background-repeat: no-repeat;
     background-position-y: 3px;
     margin: -5px 0 22px 0;
