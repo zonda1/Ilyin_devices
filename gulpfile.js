@@ -14,6 +14,7 @@ const webp = require("gulp-webp");
 const del = require("del");
 var reporter = require('postcss-reporter');
 var stylelint = require('stylelint');
+const svgstore = require("gulp-svgstore");
 
 // Styles
 
@@ -39,7 +40,6 @@ exports.styles = styles;
 const scripts = () => {
   return gulp.src("source/js/menu.js")
     .pipe(terser())
-    .pipe(rename("menu.min.js"))
     .pipe(gulp.dest("build/js"))
     .pipe(sync.stream());
 }
@@ -123,6 +123,19 @@ const server = (done) => {
 
 exports.server = server;
 
+// Sprite
+
+const sprite = () => {
+  return gulp.src("source/img/icons/sprite-icons/*.svg")
+    .pipe(svgstore({
+      inlineSvg: true
+    }))
+    .pipe(rename("sprite.svg"))
+    .pipe(gulp.dest("build/img/icons/sprite-icons"));
+}
+
+exports.sprite = sprite;
+
 // Reload
 
 const reload = (done) => {
@@ -151,6 +164,7 @@ const build = gulp.series(
   gulp.parallel(
     styles,
     scripts,
+    sprite,
     createWebp
   ),
 );
@@ -166,6 +180,7 @@ exports.default = gulp.series(
   gulp.parallel(
     styles,
     scripts,
+    sprite,
     createWebp
   ),
   gulp.series(

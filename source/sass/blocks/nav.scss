@@ -3,13 +3,13 @@
   border-bottom: 1px solid rgba($white, 0.2);
   margin: 18px 0 0 0;
 
-  &__list {
+  & ul {
     @include list-reset();
     display: flex;
     flex-wrap: wrap;
   }
 
-  &__link {
+  & a {
     @include font-parametrs(300, 16px, 32px);
     letter-spacing: -0.005em;
 
@@ -17,8 +17,8 @@
     padding-right: 135px;
   }
 
-  &__item:last-child {
-    .nav__link {
+  & li:last-child {
+    a {
       padding-right: 0;
     }
   }
@@ -32,12 +32,12 @@
     margin: 0 0 0 0;
     background-color: $white;
 
-    &__list {
+    & ul {
       display: flex;
       flex-direction: column;
     }
 
-    &__item {
+    & li {
       display: flex;
       align-items: center;
       height: 60px;
@@ -55,7 +55,7 @@
       }
     }
 
-    &__link {
+    & a {
       width: 100%;
 
       @include font-parametrs(400, 20px, 28px);

@@ -3,7 +3,7 @@
     max-width: 1166px;
     margin: 0 auto;
 
-    @media (max-width: $tablet-max-width) {
+    @media (max-width: 1200px) {
       max-width: 556px;
     }
   }
@@ -16,7 +16,7 @@
     }
   }
 
-  &__title {
+  & h2 {
     @include font-parametrs(600, 30px, 30px);
     letter-spacing: -0.005em;
     color: $dark-1;
@@ -33,13 +33,18 @@
     }
   }
 
-  &__list {
+  & ul {
     @include list-reset();
     display: grid;
     grid-template: auto/ repeat(4, auto);
     text-align: center;
     column-gap: 38px;
     margin: 0;
+
+    @media (min-width: 1024px) and (max-width: 1200px) {
+      grid-template: auto auto/ repeat(2, auto);
+      row-gap: 40px;
+    }
 
     @media (max-width: $tablet-max-width) {
       grid-template: auto auto/ repeat(2, auto);
@@ -54,11 +59,11 @@
     }
   }
 
-  &__item {
+  & li {
     width: 263px;
 
     &:first-child {
-      .facts__link {
+      a {
         @media (max-width: $mobile-max-width) {
           margin: 0 0 2px 0;
         }
@@ -74,7 +79,7 @@
     }
   }
 
-  &__subtitle {
+  & h3 {
     @include font-parametrs(600, 28px, 38px);
     letter-spacing: -1.27273px;
     color: $azure;
@@ -85,7 +90,7 @@
     }
   }
 
-  &__link {
+  & a {
     letter-spacing: -0.5px;
     color: $black;
 

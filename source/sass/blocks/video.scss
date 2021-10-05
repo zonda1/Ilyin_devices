@@ -35,7 +35,7 @@
     }
   }
 
-  &__title {
+  & h2 {
     @include font-parametrs(600, 30px, 30px);
     letter-spacing: -0.005em;
     color: $white;
@@ -51,7 +51,7 @@
     }
   }
 
-  &__subtitle {
+  & p {
     @include font-parametrs(300, 16px, 28px);
     letter-spacing: -0.005em;
 
@@ -103,7 +103,7 @@
     top: 0;
     left: 0;
 
-    .video__logo {
+    & span img {
       position: absolute;
       top: 50%;
       left: 50%;
@@ -126,8 +126,10 @@
     @media (max-width: $tablet-max-width) {
       top: 0;
     }
+  }
 
-    .video__pic {
+  & .video__pic {
+    img {
       @media (max-width: $tablet-max-width) {
         width: 503px;
         height: 282px;
