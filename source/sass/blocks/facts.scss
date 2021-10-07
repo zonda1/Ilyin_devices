@@ -94,6 +94,14 @@
     letter-spacing: -0.5px;
     color: $black;
 
+    &:hover {
+      color: rgba($dark-1, 0.7);
+    }
+
+    &:focus {
+      color: rgba($azure, 0.7);
+    }
+
     @media (max-width: $mobile-max-width) {
       font-size: 18px;
       margin: 0 0 12px 0;

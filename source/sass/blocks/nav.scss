@@ -15,6 +15,14 @@
 
     @include rgba($white, 0.7);
     padding-right: 135px;
+
+    &:hover {
+      @include rgba($grey-3, 0.5);
+    }
+
+    &:focus {
+      color: rgba($azure, 0.7);
+    }
   }
 
   & li:last-child {
@@ -28,9 +36,10 @@
   .nav {
     transform: translate(0, -100%);
     width: 320px;
-    padding: 100px 0 138px 0;
+    padding: 100px 0 100px 0;
     margin: 0 0 0 0;
     background-color: $white;
+
 
     & ul {
       display: flex;
@@ -64,6 +73,10 @@
       @include rgba($dark-3, 0.7);
       padding-right: 0;
       padding-left: 16px;
+
+      &:hover {
+        @include rgba($dark-1,1);
+      }
     }
 
     &.active {

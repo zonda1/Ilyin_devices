@@ -1,42 +1,38 @@
-let iconBurger;
-let navMain;
-let formTel;
-let sendForm;
+let iconBurger = document.querySelector('.menu__burger');
+let navMain = document.querySelector('.nav');
+let formTel = document.querySelector('input[name="tel"]');
+let sendForm = document.querySelector('.form');
+let mainScreen = document.querySelector('.main-screen');
+let mainPage = document.querySelector('.page');
+
+mainScreen.classList.remove('no-js');
 
 window.onload = function () {
-  if (document.querySelector('.menu__burger') != null) {
-    iconBurger = document.querySelector('.menu__burger');
-    iconBurger.classList.remove('no-js')
+  if (iconBurger != null && navMain != null) {
+    iconBurger.classList.remove('no-js');
+    navMain.classList.remove('no-js');
     iconBurger.addEventListener('click', function () {
       iconBurger.classList.toggle('active');
-    });
-  } else alert('нет элемента menu__burger');
-
-  if (document.querySelector('.nav') != null) {
-    navMain = document.querySelector('.nav');
-    navMain.classList.remove('no-js')
-    iconBurger.addEventListener('click', function () {
       navMain.classList.toggle('active');
+      mainPage.classList.toggle('page--modal-open');
     });
-  } else alert('нет элемента nav');
+  } else alert('нет элементов menu__burger или nav');
 
   if (document.querySelector('.ibg') != null) {
-    ibg();
+    setIbg();
   } else {
     alert('нет элемента ibg');
   }
 
-  if (document.querySelector('input[name="tel"]') != null) {
-    formTel = document.querySelector('input[name="tel"]')
-    formTel.addEventListener('input', ValidPhone);
+  if (formTel != null) {
+    formTel.addEventListener('input', validPhone);
   } else {
     alert('нет элемента для ввода номера телефона');
   };
 
-  if (document.querySelector('.form') != null) {
-    sendForm = document.querySelector('.form');
+  if (sendForm != null) {
     sendForm.addEventListener('submit', () => {
-      return (ValidPhone());
+      return (validPhone());
     });
   } else {
     alert('нет элемента form');
@@ -45,7 +41,7 @@ window.onload = function () {
 
 // Ibg
 
-function ibg() {
+function setIbg() {
   let ibg = document.querySelectorAll('.ibg');
   for (let i = 0; i < ibg.length; i++) {
     if (ibg[i].querySelector('img')) {
@@ -57,8 +53,7 @@ function ibg() {
 
 // Validation
 
-function ValidPhone() {
-
+function validPhone() {
   let re = /^(\+7|7|8)?[\s\-]?\(?[489][0-9]{2}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$/;
   let myPhone = formTel.value;
   let valid = re.test(myPhone);
@@ -67,7 +62,6 @@ function ValidPhone() {
   } else {
     formTel.setCustomValidity('Номер телефона введен неправильно!');
   }
-  formTel.reportValidity();
   return valid;
 }
 
@@ -76,6 +70,9 @@ function ValidPhone() {
 document.querySelectorAll('.nav a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (evt) {
     evt.preventDefault();
+    iconBurger.classList.remove('active');
+    navMain.classList.remove('active');
+    mainPage.classList.remove('page--modal-open');
     document.querySelector(this.getAttribute('href')).scrollIntoView({
       behavior: 'smooth'
     });

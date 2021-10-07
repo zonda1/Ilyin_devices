@@ -12,6 +12,10 @@
       padding: 18px;
       z-index: 5;
 
+      &:hover {
+        background-color: rgba($azure, 0.7);
+      }
+
       &.no-js {
         display: none;
       }
@@ -36,6 +40,10 @@
 
       &.active {
         background-color: transparent;
+
+        &:hover {
+          background-color: rgba($grey-3, 0.8);
+        }
 
         span {
           background-color: rgba($grey-2, 0.2);

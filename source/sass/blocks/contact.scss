@@ -48,6 +48,7 @@
     display: flex;
     margin: 0 0 39px 0;
 
+
     @media (max-width: $tablet-max-width) {
 
       margin: 0 0 24px 0;
@@ -59,14 +60,18 @@
     }
 
     iframe {
+      background: url("../img/content/map_dktp.webp");
+
       @media (max-width: $tablet-max-width) {
         width: 698px;
         height: 545px;
+        background: url("../img/content/map_tablet.webp");
       }
 
       @media (max-width: $mobile-max-width) {
         width: 320px;
         height: 250px;
+        background: url("../img/content/map_mobile.webp");
       }
     }
   }
@@ -109,6 +114,14 @@
       & a {
         @include rgba($black, 0.5);
         @include font-parametrs(400, 16px, 22px);
+
+        &:hover {
+          color: rgba($dark-1, 0.3);
+        }
+
+        &:focus {
+          color: rgba($azure, 0.7);
+        }
       }
 
       &:first-child a {

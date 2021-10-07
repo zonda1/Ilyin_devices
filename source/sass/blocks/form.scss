@@ -49,6 +49,10 @@ input {
   box-sizing: border-box;
   border-radius: 6px;
 
+  &:hover {
+    background-color: rgba($grey-4, 0.8);
+  }
+
   @media (max-width: $mobile-max-width) {
     margin: 0 0 20px 0;
   }

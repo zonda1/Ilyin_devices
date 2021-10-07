@@ -12,6 +12,10 @@
 
   @media (max-width: $tablet-max-width) {
     flex-basis: 340px;
+
+    &.no-js {
+      margin-top: 600px;
+    }
   }
 
   @media (max-width: $mobile-max-width) {
