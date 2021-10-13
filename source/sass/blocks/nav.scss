@@ -1,4 +1,4 @@
-.nav {
+nav {
   padding: 0 21px 6px 19px;
   border-bottom: 1px solid rgba($white, 0.2);
   margin: 18px 0 0 0;
@@ -7,6 +7,14 @@
     @include list-reset();
     display: flex;
     flex-wrap: wrap;
+
+    & li {
+      margin-right: 135px;
+    }
+
+    & li:last-child {
+      margin-right: 0;
+    }
   }
 
   & a {
@@ -14,7 +22,7 @@
     letter-spacing: -0.005em;
 
     @include rgba($white, 0.7);
-    padding-right: 135px;
+    // padding-right: 135px;
 
     &:hover {
       @include rgba($grey-3, 0.5);
@@ -24,43 +32,38 @@
       color: rgba($azure, 0.7);
     }
   }
-
-  & li:last-child {
-    a {
-      padding-right: 0;
-    }
-  }
 }
 
 @media (max-width: $tablet-max-width) {
-  .nav {
+  nav {
     transform: translate(0, -100%);
     width: 320px;
+    height: 100vh;
     padding: 100px 0 100px 0;
-    margin: 0 0 0 0;
+    margin: 0;
     background-color: $white;
 
 
     & ul {
       display: flex;
       flex-direction: column;
-    }
 
-    & li {
-      display: flex;
-      align-items: center;
-      height: 60px;
-      background-color: $grey;
-      margin-bottom: 30px;
+      & li {
+        display: flex;
+        align-items: center;
+        height: 60px;
+        background-color: $grey;
+        margin: 0 0 30px 0;
 
-      &::after {
-        content: "";
-        position: absolute;
-        width: 25px;
-        height: 25px;
-        right: 16px;
-        background: url("../img/icons/arrow-right.png");
-        cursor: pointer;
+        &::after {
+          content: "";
+          position: absolute;
+          width: 25px;
+          height: 25px;
+          right: 16px;
+          background: url("../img/icons/arrow-right.png");
+          cursor: pointer;
+        }
       }
     }
 

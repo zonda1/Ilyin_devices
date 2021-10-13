@@ -11,7 +11,7 @@
   <link rel="preload" href="fonts/open-sans-v26-latin_cyrillic-regular.woff2" as="font" crossorigin>
   <link rel="preload" href="fonts/open-sans-v26-latin_cyrillic-600.woff2" as="font" crossorigin>
   <title>Велосипеды</title>
-  <link rel="stylesheet" href="css/style.min.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -71,7 +71,7 @@
                 maxlength="30">
             </label>
             <label for="tel">
-              <input type="number" name="tel" id="tel" placeholder="Введите Ваш номер телефона" required>
+              <input type="tel" name="tel" id="tel" placeholder="Введите Ваш номер телефона" required>
             </label>
             <button class="button" type="submit">Подобрать велосипед мечты</button>
           </form>
@@ -85,22 +85,28 @@
             </h2>
             <ul>
               <li>
-                <h3>01</h3>
                 <a href="#">
-                  Самый широкий выбор велосипедов!
+                  <h3>01</h3>
+                  <p>Самый широкий выбор велосипедов!</p>
                 </a>
               </li>
               <li>
-                <h3>02</h3>
-                <a href="#">Доставка велосипедов по всей России!</a>
+                <a href="#">
+                  <h3>02</h3>
+                  <p>Доставка велосипедов по всей России!</p>
+                </a>
               </li>
               <li>
-                <h3>03</h3>
-                <a href="#">Большой выбор крутых аксессуаров!</a>
+                <a href="#">
+                  <h3>03</h3>
+                  <p>Большой выбор крутых аксессуаров!</p>
+                </a>
               </li>
               <li>
-                <h3>04</h3>
-                <a href="#">Профессиональные консультации!</a>
+                <a href="#">
+                  <h3>04</h3>
+                  <p>Профессиональные консультации!</p>
+                </a>
               </li>
             </ul>
           </div>
@@ -157,6 +163,53 @@
                 </picture>
                 <p>Детский велосипед</p>
               </li>
+
+              <!-- <li>
+                <picture>
+                  <source type="image/webp" media="(max-width:1023px)"
+                    srcset="img/content/bike-3_tablet&mobile.webp 1x, img/content/bike-3_tablet&mobile@2x.webp 2x">
+                  <source type="image/webp"
+                    srcset="img/content/bike-3_dktp.webp 1x, img/content/bike-3_dktp@2x.webp 2x">
+
+                  <source media="(max-width:1023px)"
+                    srcset="img/content/bike-3_tablet&mobile.jpg 1x, img/content/bike-3_tablet&mobile@2x.jpg 2x">
+
+                  <img src="img/content/bike-3_dktp.jpg" srcset="img/content/bike-3_dktp@2x.jpg 2x" width="342"
+                    height="513" alt="Детский велосипед">
+                </picture>
+                <p>Детский велосипед</p>
+              </li>
+              <li>
+                <picture>
+                  <source type="image/webp" media="(max-width:1023px)"
+                    srcset="img/content/bike-3_tablet&mobile.webp 1x, img/content/bike-3_tablet&mobile@2x.webp 2x">
+                  <source type="image/webp"
+                    srcset="img/content/bike-3_dktp.webp 1x, img/content/bike-3_dktp@2x.webp 2x">
+
+                  <source media="(max-width:1023px)"
+                    srcset="img/content/bike-3_tablet&mobile.jpg 1x, img/content/bike-3_tablet&mobile@2x.jpg 2x">
+
+                  <img src="img/content/bike-3_dktp.jpg" srcset="img/content/bike-3_dktp@2x.jpg 2x" width="342"
+                    height="513" alt="Детский велосипед">
+                </picture>
+                <p>Детский велосипед</p>
+              </li>
+              <li>
+                <picture>
+                  <source type="image/webp" media="(max-width:1023px)"
+                    srcset="img/content/bike-3_tablet&mobile.webp 1x, img/content/bike-3_tablet&mobile@2x.webp 2x">
+                  <source type="image/webp"
+                    srcset="img/content/bike-3_dktp.webp 1x, img/content/bike-3_dktp@2x.webp 2x">
+
+                  <source media="(max-width:1023px)"
+                    srcset="img/content/bike-3_tablet&mobile.jpg 1x, img/content/bike-3_tablet&mobile@2x.jpg 2x">
+
+                  <img src="img/content/bike-3_dktp.jpg" srcset="img/content/bike-3_dktp@2x.jpg 2x" width="342"
+                    height="513" alt="Детский велосипед">
+                </picture>
+                <p>Детский велосипед</p>
+              </li> -->
+
             </ul>
           </div>
         </div>
@@ -192,7 +245,7 @@
                       width="929" height="522" alt="Крутой велосипед">
                   </picture>
                 </div>
-                <span><img src="img/icons/press-play.svg" alt="Нажать проигрывание"></span>
+                <span><img src="img/icons/press-play.svg" alt="Нажать проигрывание" tabindex="1"></span>
               </div>
             </div>
           </div>

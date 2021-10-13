@@ -20,16 +20,16 @@ const svgstore = require("gulp-svgstore");
 
 const styles = () => {
   return gulp.src("source/sass/style.scss")
-    .pipe(plumber())
+    // .pipe(plumber())
     .pipe(sourcemap.init())
     .pipe(sass())
     .pipe(postcss([
       autoprefixer(),
       csso()
     ]))
-    .pipe(rename("style.min.css"))
+    .pipe(rename("style.css"))
     .pipe(sourcemap.write("."))
-    .pipe(gulp.dest("build/css"))
+    .pipe(gulp.dest("source/css"))
     .pipe(sync.stream());
 }
 
@@ -102,7 +102,7 @@ exports.clean = clean;
 const server = (done) => {
   sync.init({
     server: {
-      baseDir: 'build'
+      baseDir: 'source'
     },
     cors: true,
     notify: false,
@@ -121,7 +121,7 @@ const sprite = () => {
       inlineSvg: true
     }))
     .pipe(rename("sprite.svg"))
-    .pipe(gulp.dest("build/img/icons/sprite-icons"));
+    .pipe(gulp.dest("source/img/icons/sprite-icons"));
 }
 
 exports.sprite = sprite;

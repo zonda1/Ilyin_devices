@@ -110,6 +110,14 @@
       transform: translate(-51%, -48%);
       cursor: pointer;
 
+      &:hover {
+        opacity: 0.5;
+      }
+
+      &:focus {
+        background-color: $azure;
+      }
+
       @media (max-width: $tablet-max-width) {
         transform: translate(-50%, -48%);
         width: 90.36px;
