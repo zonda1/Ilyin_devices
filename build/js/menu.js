@@ -4,6 +4,11 @@ let formTel = document.querySelector('input[name="tel"]');
 let sendForm = document.querySelector('.form');
 let mainScreen = document.querySelector('.main-screen');
 let mainPage = document.querySelector('.page');
+// let maskOptions = {
+//   mask: '+7(000)000-00-00',
+//   lazy: false;
+// }
+// let mask = new IMask(formTel, maskOptions);
 
 mainScreen.classList.remove('no-js');
 
@@ -31,9 +36,8 @@ window.onload = function () {
   };
 
   if (sendForm != null) {
-    sendForm.addEventListener('submit', () => {
-      return (validPhone());
-    });
+    // sendForm.addEventListener('submit', () => (validPhone()));
+    return true;
   } else {
     alert('нет элемента form');
   }
@@ -57,12 +61,15 @@ function validPhone() {
   let re = /^(\+7|7|8)?[\s\-]?\(?[489][0-9]{2}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$/;
   let myPhone = formTel.value;
   let valid = re.test(myPhone);
+
   if (valid) {
-    formTel.setCustomValidity('');
-  } else {
-    formTel.setCustomValidity('Номер телефона введен неправильно!');
+    // formTel.setCustomValidity('');
+    return valid;
   }
-  return valid;
+  // formTel.setCustomValidity('Номер телефона введен неправильно!');
+  return false;
+
+  // return valid;
 }
 
 // Scroll to the anchor
