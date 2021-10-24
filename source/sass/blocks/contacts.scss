@@ -1,0 +1,22 @@
+.contacts {
+
+  &__social {
+    & ul {
+      @include list-reset();
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__sections {
+    & ul {
+      @include list-reset();
+    }
+  }
+
+  &__address {
+    & ul {
+      @include list-reset();
+    }
+  }
+}

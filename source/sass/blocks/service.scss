@@ -1,0 +1,87 @@
+.service {
+  background: $dark-blue;
+
+  &__wrapper {
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 93px 0 127px 0;
+
+    & h2 {
+      font-family: "Roboto Condensed", "Arial", sans-serif;
+
+      @include font-parametrs(400, 36px, 51px);
+      color: $white;
+      margin: -2px 0 49px 0;
+    }
+
+    & ul {
+      @include list-reset();
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    & li {
+      flex: 0 0 31.62%;
+      height: 620px;
+      position: relative;
+
+
+      &::before {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: inherit;
+        background-size: cover;
+        opacity: 0.2;
+      }
+
+      & h3 {
+        font-family: "Roboto Condensed", "Arial", sans-serif;
+
+        @include font-parametrs(400, 20px, 30px);
+        color: $white;
+        margin: 52px 0 0 44px;
+        // min-width: 220px;
+        min-height: 60px;
+      }
+
+      &:first-child {
+        background: url("../../img/content/device-1_dktp.jpg");
+        background-size: 0 0;
+      }
+
+      &:nth-child(2n) {
+        background: url("../../img/content/device-2_dktp.jpg");
+        background-size: 0 0;
+      }
+
+      &:nth-child(3n) {
+        background: url("../../img/content/device-3_dktp.jpg");
+        background-size: 0 0;
+      }
+
+      & a {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      & span {
+        width: 63px;
+        height: 63px;
+        align-self: flex-end;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #00b2ff;
+        z-index: 2;
+      }
+    }
+  }
+}

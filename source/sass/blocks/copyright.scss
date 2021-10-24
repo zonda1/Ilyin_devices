@@ -1,0 +1,5 @@
+.copyright {
+  & ul {
+    @include list-reset();
+  }
+}

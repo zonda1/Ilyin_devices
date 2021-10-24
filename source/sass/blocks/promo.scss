@@ -1,0 +1,58 @@
+.promo {
+  background:
+    url("../../img/content/triangles-feedback.png") 82.5% 50% no-repeat,
+    url("../../img/content/promo-ruffle.png"),
+    $dark-blue;
+    // padding: 0 30px 0;
+
+  &__wrapper {
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 316px 177px 292px 249px;
+    background:url("../../img/content/board_dktp.png") 85.5% 71% no-repeat;
+
+    & h2 {
+      font-family: "Roboto Condensed", "Arial", sans-serif;
+
+      @include font-parametrs(700, 80px, 94px);
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: $white;
+      margin: 0 0 31px 0;
+    }
+  }
+
+  &__info {
+    padding: 0 0 0 94px;
+
+    & p {
+      @include font-parametrs(400, 22px, 34px);
+      color: $white;
+      max-width: 683px;
+      margin: 0 0 54px 0;
+      position: relative;
+
+      &::before {
+        position: absolute;
+        content: "";
+        width: 66px;
+        height: 2px;
+        top: 15px;
+        left: -94px;
+        background-color: $white;
+      }
+    }
+
+    & a {
+      @include font-parametrs(700, 16px, 19px);
+      font-family: "Roboto Condensed", "Arial", sans-serif;
+      text-align: center;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: $white;
+      padding: 17px 28px 14px;
+      background: #00b2ff;
+      border-radius: 5px;
+    }
+  }
+}

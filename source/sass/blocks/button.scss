@@ -1,28 +1,15 @@
 .button {
-  height: 51px;
-  background-color: $azure;
+  font-family: "Roboto Condensed", "Arial", sans-serif;
 
-  @include font-parametrs(600, 15px, 21px);
-  color: $black;
-  border: 0;
-  border-radius: 6px;
-
-  &:hover {
-    background-color: rgba($azure, 0.7);
-  }
-
-  &:focus {
-    background-color: rgba($azure, 0.3);
-    color: rgba($dark-1, 0.7);
-  }
-
-  @media (max-width: $tablet-max-width) {
-    padding: 0;
-    letter-spacing: 0.01em;
-  }
-
-  @media (max-width: $mobile-max-width) {
-    padding: 0 2px 2px 0;
-    letter-spacing: 0.005em;
-  }
+  @include font-parametrs(700, 14px, 16px);
+  text-align: center;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  width: 180px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border-radius: 5px;
 }

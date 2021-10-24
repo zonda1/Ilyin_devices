@@ -1,0 +1,78 @@
+.benefits {
+  background: url("../../img/content/polygon-top.png") 12% 4.5% no-repeat,
+    url("../../img/content/polygon-center.png") 53.3% 37% no-repeat,
+    url("../../img/content/polygon-left.png") 0 112% no-repeat,
+    url("../../img/content/polygon-right.png") 98.5% 46% no-repeat;
+
+  &__wrapper {
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 115px 0 101px 0;
+  }
+
+  & ul {
+    @include list-reset();
+    margin: 0 0 110px 0;
+    display: grid;
+    grid-template-columns: repeat(2, 48.71%);
+    grid-template-rows: repeat(2, min-content);
+    row-gap: 30px;
+    column-gap: 30px;
+
+    & li {
+      margin: 0 0 0 0;
+      padding: 40px 0 49px 44.61px;
+      background: $white;
+      border: 1px solid #ebebeb;
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 3px;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: $blue;
+      }
+    }
+
+    & h3 {
+      font-family: "Roboto Condensed", "Arial", sans-serif;
+
+      @include font-parametrs(400, 24px, 34px);
+      color: $blue;
+      margin: 11px 0 15px 0;
+    }
+
+    & p {
+      width: 483px;
+      height: 103px;
+      margin: 0 0 0 0;
+      color: #666666;
+    }
+  }
+
+  &__info {
+    background: url("../../img/content/2005.png") -3% 7px no-repeat;
+    padding: 0 0 10px 180px;
+
+    & h3 {
+      font-family: "Roboto Condensed", "Arial", sans-serif;
+
+      @include font-parametrs(400, 36px, 51px);
+      margin: 0 0 22px 0;
+    }
+
+    & p {
+      max-width: 984px;
+      min-height: 174px;
+      margin: 0 0 15px 0;
+    }
+
+    & a {
+      border: 1px solid $blue;
+      color: $blue;
+    }
+  }
+}
