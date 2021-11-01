@@ -24,10 +24,6 @@ body {
   padding: 0;
   color: #666666;
   background-color: $white;
-  // &--modal-open {
-  //   overflow-y: hidden;
-  //   height: 100vh;
-  // }
 }
 
 .wrapper {
@@ -35,7 +31,6 @@ body {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  // padding: 0 30px 0;
 }
 
 .page-main {
@@ -57,4 +52,10 @@ a {
   clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
+}
+
+@media (max-width: $tablet-max-width) {
+  head {
+    width: 1023px;
+  }
 }

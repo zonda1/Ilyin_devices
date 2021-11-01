@@ -12,24 +12,25 @@ const terser = require("gulp-terser");
 const imagemin = require("gulp-imagemin");
 const webp = require("gulp-webp");
 const del = require("del");
-var reporter = require('postcss-reporter');
-var stylelint = require('stylelint');
+const reporter = require("postcss-reporter");
+const stylelint = require("stylelint");
 const svgstore = require("gulp-svgstore");
+const cheerio = require("gulp-cheerio");
 
 // Styles
 
 const styles = () => {
   return gulp.src("source/sass/style.scss")
-    // .pipe(plumber())
+    .pipe(plumber())
     .pipe(sourcemap.init())
     .pipe(sass())
     .pipe(postcss([
       autoprefixer(),
       csso()
     ]))
-    .pipe(rename("style.css"))
+    .pipe(rename("style.min.css"))
     .pipe(sourcemap.write("."))
-    .pipe(gulp.dest("source/css"))
+    .pipe(gulp.dest("build/css"))
     .pipe(sync.stream());
 }
 
@@ -60,17 +61,6 @@ const copyImages = () => {
 
 exports.copyImages = copyImages;
 
-// WebP
-
-// const createWebp = () => {
-//   return gulp.src("source/img/**/*.{jpg,png,svg}")
-//     .pipe(webp({
-//       quality: 90
-//     }))
-//     .pipe(gulp.dest("build/img"))
-// }
-
-// exports.createWebp = createWebp;
 
 // Copy
 
@@ -102,7 +92,7 @@ exports.clean = clean;
 const server = (done) => {
   sync.init({
     server: {
-      baseDir: 'source'
+      baseDir: 'build'
     },
     cors: true,
     notify: false,
@@ -117,11 +107,19 @@ exports.server = server;
 
 const sprite = () => {
   return gulp.src("source/img/icons/sprite-icons/*.svg")
+    .pipe(cheerio({
+      run: ($) => {
+        $('[fill]').removeAttr('fill');
+      },
+      parserOptions: {
+        xmlMode: true
+      }
+    }))
     .pipe(svgstore({
       inlineSvg: true
     }))
     .pipe(rename("sprite.svg"))
-    .pipe(gulp.dest("source/img/icons/sprite-icons"));
+    .pipe(gulp.dest("build/img/icons/sprite-icons"));
 }
 
 exports.sprite = sprite;
@@ -153,7 +151,6 @@ const build = gulp.series(
   gulp.parallel(
     styles,
     sprite,
-    // createWebp
   ),
 );
 
@@ -167,8 +164,7 @@ exports.default = gulp.series(
   copyImages,
   gulp.parallel(
     styles,
-    // sprite,
-    // createWebp
+    sprite,
   ),
   gulp.series(
     server,

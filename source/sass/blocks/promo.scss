@@ -3,13 +3,39 @@
     url("../../img/content/triangles-feedback.png") 82.5% 50% no-repeat,
     url("../../img/content/promo-ruffle.png"),
     $dark-blue;
-    // padding: 0 30px 0;
+
+
+  @media (max-width: $tablet-max-width) {
+    background:
+      url("../../img/content/triangles-feedback.png") 179.5% -21%/520.82px 501.82px no-repeat,
+      url("../../img/content/promo-ruffle.png"),
+      $dark-blue;
+  }
+
+  @media (max-width: $mobile-max-width) {
+    background:
+      url("../../img/content/triangles-feedback.png") -73% -29%/522.82px 483.82px no-repeat,
+      url("../../img/content/promo-ruffle.png"),
+      $dark-blue;
+  }
 
   &__wrapper {
     max-width: 1920px;
     margin: 0 auto;
     padding: 316px 177px 292px 249px;
-    background:url("../../img/content/board_dktp.png") 85.5% 71% no-repeat;
+    background: url("../../img/content/board_dktp.png") 85.5% 71% no-repeat;
+
+    @media (max-width: $tablet-max-width) {
+      padding: 188px 212px 180px 88px;
+      background-size: 465px 340px;
+      background-position: 168.5% 33%;
+    }
+
+    @media (max-width: $mobile-max-width) {
+      padding: 286px 15px 87px 15px;
+      background-size: 301px 220px;
+      background-position: 136.5% 21.5%;
+    }
 
     & h2 {
       font-family: "Roboto Condensed", "Arial", sans-serif;
@@ -18,18 +44,35 @@
       letter-spacing: 0.07em;
       text-transform: uppercase;
       color: $white;
-      margin: 0 0 31px 0;
+      margin: 0 0 26px 0;
+
+      @media (max-width: $tablet-max-width) {
+        @include font-parametrs(700, 60px, 70px);
+      }
+
+      @media (max-width: $mobile-max-width) {
+        @include font-parametrs(700, 40px, 47px);
+        margin: 0 0 27px 0;
+      }
     }
   }
 
   &__info {
     padding: 0 0 0 94px;
 
+    @media (max-width: $tablet-max-width) {
+      padding: 0 0 0 51px;
+    }
+
+    @media (max-width: $mobile-max-width) {
+      padding: 0 0 0 0;
+    }
+
     & p {
       @include font-parametrs(400, 22px, 34px);
       color: $white;
       max-width: 683px;
-      margin: 0 0 54px 0;
+      margin: 0 0 60px 0;
       position: relative;
 
       &::before {
@@ -41,6 +84,27 @@
         left: -94px;
         background-color: $white;
       }
+
+      @media (max-width: $tablet-max-width) {
+        @include font-parametrs(400, 18px, 28px);
+        margin: 0 0 71px 0;
+
+        &::before {
+          width: 33px;
+          top: 15px;
+          left: -49px;
+        }
+      }
+
+      @media (max-width: $mobile-max-width) {
+        @include font-parametrs(400, 16px, 25px);
+        margin: 0 0 56px 0;
+        padding: 0 0 0 51px;
+
+        &::before {
+          left: 3px;
+        }
+      }
     }
 
     & a {
@@ -50,9 +114,34 @@
       letter-spacing: 0.05em;
       text-transform: uppercase;
       color: $white;
-      padding: 17px 28px 14px;
+      padding: 17px 47px 18px;
       background: #00b2ff;
       border-radius: 5px;
+
+      &:hover {
+        opacity: 0.8;
+      }
+
+      & span {
+        display: none;
+      }
+
+      @media (max-width: $tablet-max-width) {
+        padding: 16px 31px 18px 30px;
+      }
+
+      @media (max-width: $mobile-max-width) {
+        padding: 17px 33px 18px 33px;
+        margin: 0 0 0 1px;
+
+        & b {
+          display: none;
+        }
+
+        & span {
+          display: inline;
+        }
+      }
     }
   }
 }

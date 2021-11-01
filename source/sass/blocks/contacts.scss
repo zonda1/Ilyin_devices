@@ -1,22 +1,268 @@
 .contacts {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 65px 0 32px 0;
+
+  @media (max-width: $tablet-max-width) {
+    padding: 19px 0 33px 0;
+  }
+
+  @media (max-width: $mobile-max-width) {
+    padding: 46px 0 0 0;
+  }
 
   &__social {
-    & ul {
-      @include list-reset();
+    flex: 1 0 29.886%;
+
+    @media (max-width: $tablet-max-width) {
+      position: relative;
+      flex: 1 0 100%;
       display: flex;
       flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 0 0 20px 0;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: -100vw;
+        bottom: 0;
+        width: 200vw;
+        height: 1px;
+        background-color: #626962;
+      }
+
+      & li {
+        @include list-reset();
+        @include font-parametrs(400, 13px, 24px);
+
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        align-self: center;
+        margin: 0 0 0 15px;
+      }
+    }
+
+    @media (max-width: $mobile-max-width) {
+      justify-content: center;
+      padding: 0 0 45px 0;
+
+      & li {
+        margin: 22px 0 31px 0;
+      }
+    }
+
+    & ul {
+      @include list-reset();
+      margin: 45px 0 0 0;
+      display: flex;
+      flex-wrap: wrap;
+
+
+      & li {
+        margin: 0 16px 0 0;
+
+        &:last-child {
+          margin: 0 0 0 0;
+        }
+
+        & svg {
+          fill: #cdcdcd;
+        }
+
+        & svg:hover {
+          fill: $blue;
+        }
+      }
+
+      @media (max-width: $tablet-max-width) {
+        align-items: center;
+        margin: 0;
+        order: 3;
+      }
     }
   }
 
   &__sections {
+    flex: 1 0 46.529%;
+
+    @media (max-width: $tablet-max-width) {
+      flex: 1 0 52.966%;
+      padding: 38px 0 0 0;
+    }
+
+    @media (max-width: $mobile-max-width) {
+      flex: 1 0 100%;
+      padding: 30px 0 0 0;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: -100vw;
+        bottom: 0;
+        width: 200vw;
+        height: 1px;
+        background-color: #626962;
+      }
+    }
+
+
+    & h3 {
+      margin: 0 0 24px 0;
+
+      @include font-parametrs(400, 15px, 16px);
+
+      text-transform: uppercase;
+      color: $dark-blue;
+    }
+
     & ul {
       @include list-reset();
+      @include font-parametrs(400, 15px, 25px);
+      height: 100px;
+      display: inline-flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      color: rgba($dark-blue, 0.5);
+
+
+      & li {
+        margin: 0 74px 0 0;
+      }
+
+      & a {
+        color: inherit;
+      }
+
+      & a:hover {
+        color: rgba($dark-blue, 1);
+      }
+
+
+      @media (max-width: $tablet-max-width) {
+        display: block;
+        height: 175px;
+
+        & li {
+          margin: 0;
+        }
+      }
+
+      @media (max-width: $mobile-max-width) {
+        display: none;
+      }
+    }
+
+    &.active ul,
+    &.no-js ul {
+      display: block;
+      margin: 0 0 24px;
+    }
+
+    &.no-js .tumbler {
+      display: none;
     }
   }
 
   &__address {
+    flex: 1 0 23.583%;
+
+    @media (max-width: $tablet-max-width) {
+      flex: 1 0 47.033%;
+      padding: 38px 0 0 0;
+      margin: 0 0 0 -5px;
+    }
+
+    @media (max-width: $mobile-max-width) {
+      flex: 1 0 100%;
+      position: relative;
+      padding: 33px 0 0 0;
+      margin: 0 0 0 0;
+    }
+
+
+    & h3 {
+      margin: 0 0 24px 0;
+
+      @include font-parametrs(400, 15px, 16px);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: $dark-blue;
+
+      @media (max-width: $mobile-max-width) {
+        margin: 0 0 29px 0;
+      }
+    }
+
     & ul {
       @include list-reset();
+      @include font-parametrs(400, 15px, 25px);
+      color: rgba($dark-blue, 0.5);
+
+
+      & p {
+        margin: 0 0 0 0;
+
+        @media (max-width: $mobile-max-width) {
+          max-width: 272px;
+        }
+      }
+
+      & a {
+        color: inherit;
+      }
+
+      & a:hover {
+        color: rgba($dark-blue, 1);
+      }
+
+
+      @media (max-width: $mobile-max-width) {
+        display: none;
+      }
+    }
+
+    &.active ul,
+    &.no-js ul {
+      display: block;
+      margin: 0 0 28px 0;
+    }
+
+    &.no-js .tumbler {
+      display: none;
+    }
+  }
+
+  & .tumbler {
+    @media (max-width: $mobile-max-width) {
+      position: absolute;
+      top: 30px;
+      right: 0;
+      width: 16px;
+      height: 16px;
+
+      & span {
+        content: "";
+        position: absolute;
+        top: 8px;
+        left: 0;
+        width: 16px;
+        height: 1px;
+        background-color: #c4c4c4;
+      }
+
+      & span:first-child {
+        content: "";
+        position: absolute;
+        transform: rotate(90deg);
+      }
+    }
+  }
+
+  &__contacts.active {
+    & .tumbler span:first-child {
+      display: none;
     }
   }
 }

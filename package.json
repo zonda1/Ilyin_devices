@@ -1,13 +1,14 @@
 {
-  "name": "bicycles",
+  "name": "devices",
   "private": true,
-  "description": "Проект Велосипеды",
+  "description": "Проект Девайсы",
   "devDependencies": {
     "@htmlacademy/editorconfig-cli": "1.0.0",
     "autoprefixer": "10.2.5",
     "browser-sync": "2.26.14",
     "del": "^6.0.0",
     "gulp": "4.0.2",
+    "gulp-cheerio": "^1.0.0",
     "gulp-htmlmin": "^5.0.1",
     "gulp-imagemin": "^7.1.0",
     "gulp-plumber": "1.2.1",
@@ -28,6 +29,7 @@
   "scripts": {
     "editorconfig": "editorconfig-cli",
     "stylelint": "stylelint \"source/sass/**/*.scss\" --syntax scss",
+    "stylelint:fix": "stylelint \"source/sass/**/*{.css,.scss}\" --fix",
     "test": "npm run editorconfig && npm run stylelint",
     "build": "gulp build",
     "start": "gulp",

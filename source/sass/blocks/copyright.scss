@@ -1,5 +1,82 @@
 .copyright {
+  padding: 14px 0;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: -100vw;
+    top: 0;
+    width: 200vw;
+    height: 1px;
+    background-color: #626962;
+  }
+
+  @media (max-width: $tablet-max-width) {
+    padding: 22px 0;
+    top: 5px;
+  }
+
+  @media (max-width: $mobile-max-width) {
+    padding: 26px 0 28px 0;
+  }
+
+
   & ul {
     @include list-reset();
+    @include font-parametrs(400, 13px, 24px);
+
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+
+    @media (max-width: $tablet-max-width) {
+      justify-content: space-between;
+    }
+
+    @media (max-width: $mobile-max-width) {
+      display: block;
+      text-align: center;
+    }
+
+
+    & li:first-child {
+      flex: 1 0 15.864%;
+
+      @media (max-width: $tablet-max-width) {
+        display: none;
+      }
+    }
+
+    & li:first-child + li {
+      flex: 1 0 26.558%;
+
+      @media (max-width: $tablet-max-width) {
+        display: none;
+      }
+    }
+
+    & li:nth-child(3n) {
+      flex: 1 0 43.98%;
+
+      @media (max-width: $tablet-max-width) {
+        flex: 0 0 auto;
+      }
+    }
+
+    & li:last-child {
+      flex: 0 0 13.597%;
+
+      @media (max-width: $tablet-max-width) {
+        flex: 0 0 auto;
+      }
+    }
+
+    @media (max-width: $mobile-max-width) {
+      & li:not(:last-child) {
+        margin: 0 0 21px 0;
+      }
+    }
   }
 }

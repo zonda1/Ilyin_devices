@@ -1,7 +1,25 @@
 .page-footer {
   flex: 0 0 auto;
+  padding: 0 30px 0;
+
+  @media (max-width: $tablet-max-width) {
+    padding: 0 25px 0;
+  }
+
+  @media (max-width: $mobile-max-width) {
+    padding: 0 10px 0;
+  }
+
   &__wrapper {
     max-width: 1412px;
     margin: 0 auto;
+
+    @media (max-width: $tablet-max-width) {
+      max-width: 720px;
+    }
+
+    @media (max-width: $mobile-max-width) {
+      max-width: 290px;
+    }
   }
 }

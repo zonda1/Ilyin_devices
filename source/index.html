@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Магазин микросхем</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.min.css">
 </head>
 
 
@@ -15,21 +15,24 @@
   <div class="wrapper">
     <header class="page-header">
       <div class="page-header__wrapper">
-        <a href="#"><img src="img/icons/full-logo-white-title.png" alt=""></a>
+        <a href="#">
+          <picture>
+            <source media="(max-width:767px)" srcset="img/icons/brain-logo.svg">
+            <img src="img/icons/full-logo-white-title.png" alt="">
+          </picture>
+        </a>
         <ul>
           <li>
-
             <a href="mailto"><svg width="19" height="14">
                 <use xlink:href="img/icons/sprite-icons/sprite.svg#mail"></use>
               </svg><span>info@sd.ru</span></a>
           </li>
           <li>
-
             <a href="tel:+74950005252"><svg width="18" height="18">
                 <use xlink:href="img/icons/sprite-icons/sprite.svg#phone"></use>
               </svg><span>+7 (495) 000 52 52</span></a>
           </li>
-          <li><a href="#" class="button">Заказать звонок</a></li>
+          <li><a href="#" class="page-header__button button">Заказать звонок</a></li>
         </ul>
       </div>
 
@@ -42,8 +45,35 @@
           <h2>Печатные платы</h2>
           <div class="promo__info">
             <p>производство и монтаж, поставка комплектующих, блоков и модулей</p>
-            <a href="#">Получить бесплатную консультацию</a>
+            <a href="#"><b>Получить бесплатную консультацию</b><span>бесплатная консультация</span></a>
           </div>
+        </div>
+      </section>
+
+      <section class="popup">
+        <div class="popup__wrapper">
+          <a href="#" id="close-link">
+            <img src="img/icons/close-icon.svg" width="16" height="16" alt="Закрыть окно обратной связи">
+          </a>
+          <div class="popup__title">
+            <h2>Закажите звонок</h2>
+            <p>Оставьте контакты, мы проконсультируем вас бесплатно в удобное время</p>
+          </div>
+          <form action="https://echo.htmlacademy.ru" method="POST" class="popup__form" autocomplete="off"
+            onsubmit="return (validPhone())">
+            <label for="popup-name"><input type="text" name="popup-name" id="popup-name" placeholder="Имя"></label>
+            <label for="popup-tel"><input type="tel" data-tel-input name="popup-tel" id="popup-tel"
+                placeholder="Телефон"></label>
+            <textarea name="question" id="question" cols="30" rows="10" placeholder="Ваш вопрос"></textarea>
+            <button class="button" type="submit">Отправить</button>
+
+
+            <input class="visually-hidden" id="popup-data" name="popup-data" type="checkbox"><label for="popup-data">Я
+              согласен на
+              обработку персональных
+              данных</label>
+
+          </form>
         </div>
       </section>
 
@@ -69,7 +99,6 @@
                   Сотрудничество с такими компаниями обеспичивает хорошее качество нашей продукции.
                 </p>
               </a>
-
             </li>
             <li><a href="#">
                 <svg width="36" height="31">
@@ -79,7 +108,6 @@
                 <p>По желанию клиента мы обеспечиваем полную конфеденциальность.
                 </p>
               </a>
-
             </li>
             <li><a href="#">
                 <svg width="35" height="35">
@@ -89,19 +117,22 @@
                 <p>Мы подбираем определенную фабрику, поставщиков, вид доставки, чтобы установить ту цену, которая Вас
                   устраивает. </p>
               </a>
-
             </li>
           </ul>
           <div class="benefits__info">
             <h3>О компании</h3>
-            <p>Мы поставляем электронные комплектующие, производим печатные платы и предоставляем мировые технологии с
-              1997 года. Выполняем срочные заказы и пилотные образцы до 10 дней.
-              <br><br>
-
-              Наши поставщики - мировые производители электронных компонентов: OSRAM, CREE, HOLGLITRONIC, REFOND.
-              Печатные платы и комплектующие Service Devices применяются на предприятиях Российских Железных Дорог
-              (РЖД), РоссАвтоПрома (ВАЗ, АвтоГАЗ), МинАтома, СпецМедТехники. Среди наших клиентов крупнейшие
-              Производители светотехники России.</p>
+            <div>
+              <p>Мы поставляем электронные комплектующие, производим печатные платы и предоставляем мировые технологии с
+                1997 года. Выполняем срочные заказы и пилотные образцы до 10 дней.
+              </p>
+              <p>
+                Наши поставщики - мировые производители электронных компонентов: OSRAM, CREE, HOLGLITRONIC, REFOND.
+                Печатные платы и комплектующие Service Devices применяются на предприятиях Российских Железных
+                Дорог<span>.. <br></span>
+                (РЖД), РоссАвтоПрома (ВАЗ, АвтоГАЗ), МинАтома, СпецМедТехники. Среди наших клиентов крупнейшие
+                Производители светотехники России.
+              </p>
+            </div>
             <a href="#" class="button">Подробнее</a>
           </div>
         </div>
@@ -151,13 +182,18 @@
             <h2>Остались вопросы? Задайте их нам!</h2>
             <p>Мы проконсультируем Вас бесплатно</p>
           </div>
-          <form action="" class="feedback__form">
-            <label for="name"><input type="text" name="name" id="name" placeholder="Имя"></label>
-            <label for="tel"><input type="tel" name="tel" id="name" placeholder="Телефон"></label>
-            <textarea name="question" id="question" cols="30" rows="10" placeholder="Ваш вопрос"></textarea>
+          <form action="https://echo.htmlacademy.ru" method="POST" class="feedback__form" autocomplete="off"
+            onsubmit="return (validPhone())">
+            <label for="name"><input type="text" name="name" id="name" placeholder="Имя" required></label>
+            <label for="tel"><input type="tel" data-tel-input name="tel" id="tel" placeholder="Телефон"
+                required></label>
+            <textarea name="popup-question" id="popup-question" cols="30" rows="10" placeholder="Ваш вопрос"
+              required></textarea>
             <button class="button" type="submit">Задать вопрос</button>
 
-            <label for=""><input type="checkbox"><span>Я согласен на обработку персональных данных</span></label>
+            <input class="visually-hidden" id="data" name="data" type="checkbox"><label for="data">Я согласен на
+              обработку персональных
+              данных</label>
           </form>
         </div>
 
@@ -183,8 +219,12 @@
                   </svg></a></li>
             </ul>
           </div>
-          <div class="contacts__sections">
+          <div class="contacts__sections contacts__contacts no-js">
             <h3>Разделы сайта</h3>
+            <div class="tumbler">
+              <span></span>
+              <span></span>
+            </div>
             <ul>
               <li><a href="#">О компании</a></li>
               <li><a href="#">Продукты</a></li>
@@ -195,10 +235,16 @@
               <li><a href="#">Контакты</a></li>
             </ul>
           </div>
-          <div class="contacts__address">
-            <h3>Разделы сайта</h3>
-            <p>г. Мытищи, Олимпийский проспект, д.10 </p>
+          <div class="contacts__address contacts__contacts no-js">
+            <h3>Наш офис</h3>
+            <div class="tumbler">
+              <span></span>
+              <span></span>
+            </div>
             <ul>
+              <li>
+                <p>г. Мытищи, Олимпийский проспект, д.10 </p>
+              </li>
               <li><a href="tel:+74955894050">+7 (495) 589-40-50</a></li>
               <li><a href="tel:+79250038767">+7 (925) 003-87-67</a></li>
               <li><a href="tel:+792692608079">+7 (926) 926-080-79</a></li>
@@ -208,7 +254,7 @@
         <div class="row__lower copyright">
           <ul>
             <li>Все права защищены</li>
-            <li>1999-2018 SD Service Devices</li>
+            <li id="element_2">1999-2018 SD Service Devices</li>
             <li>Условия конфиденциальности</li>
             <li>Developed by wow studio </li>
           </ul>
@@ -217,6 +263,8 @@
     </footer>
 
   </div>
+  <script src="js/script.js"></script>
+  <script src="js/mask.js"></script>
 </body>
 
 </html>

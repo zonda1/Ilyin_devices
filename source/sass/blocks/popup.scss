@@ -1,0 +1,123 @@
+.popup {
+  background: $blue;
+  display: none;
+
+  &__wrapper {
+    max-width: 490px;
+    padding: 33px 39.28px 36px;
+
+    & a {
+      position: absolute;
+      top: 20px;
+      right: 20.44px;
+    }
+  }
+
+  &__title {
+    margin: 0 25px 0 0;
+
+    & h2 {
+      font-family: "Roboto Condensed", "Arial", sans-serif;
+
+      @include font-parametrs(400, 28px, 39px);
+      color: $white;
+      margin: 0 0 10px 0;
+    }
+
+    & p {
+      color: $white;
+      margin: 0 0 31px 0;
+    }
+  }
+
+  &__form {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(2, 51.83px) 104px 46.65px min-content;
+    row-gap: 30px;
+
+    & textarea {
+      font-family: "PT Mono", "Courier New", monospace;
+      resize: none;
+      color: $white;
+      background-color: rgba($white, 0.1);
+      border: 0;
+
+      @include font-parametrs(400, 16px, 22px);
+      padding: 13px 0 0 24px;
+
+      &::placeholder {
+        color: $white;
+      }
+    }
+
+    & input {
+      font-family: "PT Mono", "Courier New", monospace;
+
+      @include font-parametrs(400, 16px, 22px);
+      color: $white;
+      background-color: rgba($white, 0.1);
+      border: 0;
+      padding: 0 0 0 24px;
+
+      &::placeholder {
+        color: $white;
+      }
+    }
+
+    & label {
+      & input {
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    & label:last-child {
+      max-width: 386px;
+      position: relative;
+      color: rgba($white, 0.8);
+
+      @include font-parametrs(400, 14px, 16px);
+      margin: 4px 0 0;
+      padding: 0 0 0 48px;
+    }
+
+    & input + label::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 16px;
+      height: 16px;
+      border: 1px solid $white;
+    }
+
+    & input:checked + label::after {
+      content: "";
+      position: absolute;
+      top: 5px;
+      left: 4px;
+      width: 7.5px;
+      height: 4.5px;
+      background-image: url("../img/icons/tick-icon.svg");
+      background-position: 0 0;
+    }
+
+
+    & button {
+      width: 100%;
+      background-color: transparent;
+      color: $white;
+      border: 1px solid $white;
+      margin: 0;
+    }
+  }
+
+  &-open {
+    display: block;
+    position: absolute;
+    top: 136px;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+}

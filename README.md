@@ -1,2 +1,2 @@
-# Ilyin_bicycles
-Проект Велосипеды
+# Ilyin_devices
+Проект Девайсы

@@ -4,10 +4,28 @@
     url("../../img/content/polygon-left.png") 0 112% no-repeat,
     url("../../img/content/polygon-right.png") 98.5% 46% no-repeat;
 
+  @media (max-width: $tablet-max-width) {
+    background: url("../../img/content/polygon-center_tablet.png") 101.3% 26% no-repeat;
+  }
+
+  @media (max-width: $mobile-max-width) {
+    background: url("../../img/content/polygon-center_tablet.png") 50.3% 71% no-repeat;
+  }
+
   &__wrapper {
     max-width: 1170px;
     margin: 0 auto;
     padding: 115px 0 101px 0;
+
+    @media (max-width: $tablet-max-width) {
+      max-width: 720px;
+      padding: 54px 0 74px 0;
+    }
+
+    @media (max-width: $mobile-max-width) {
+      max-width: 290px;
+      padding: 37px 0 65px 0;
+    }
   }
 
   & ul {
@@ -19,12 +37,41 @@
     row-gap: 30px;
     column-gap: 30px;
 
+    @media (max-width: $tablet-max-width) {
+      grid-template-columns: repeat(2, 47.916%);
+      margin: 0 0 52.2px 0;
+    }
+
+    @media (max-width: $mobile-max-width) {
+      grid-template-rows: repeat(4, min-content);
+      grid-template-columns: 100%;
+      row-gap: 20px;
+    }
+
     & li {
       margin: 0 0 0 0;
       padding: 40px 0 49px 44.61px;
       background: $white;
       border: 1px solid #ebebeb;
       position: relative;
+      cursor: pointer;
+
+      & svg {
+        fill: $blue;
+      }
+
+      &:hover {
+        background: $blue;
+
+        & h3,
+        p {
+          color: $white;
+        }
+
+        & svg {
+          fill: $white;
+        }
+      }
 
       &::before {
         content: "";
@@ -35,21 +82,59 @@
         left: 0;
         background-color: $blue;
       }
-    }
 
-    & h3 {
-      font-family: "Roboto Condensed", "Arial", sans-serif;
+      & h3 {
+        font-family: "Roboto Condensed", "Arial", sans-serif;
 
-      @include font-parametrs(400, 24px, 34px);
-      color: $blue;
-      margin: 11px 0 15px 0;
+        @include font-parametrs(400, 24px, 34px);
+        color: $blue;
+        margin: 11px 0 15px 0;
+
+        @media (max-width: $tablet-max-width) {
+          margin: 1px 0 9px 0;
+        }
+
+        @media (max-width: $mobile-max-width) {
+          @include font-parametrs(400, 20px, 28px);
+          margin: 6px 0 9px 0;
+        }
+      }
+
+      @media (max-width: $tablet-max-width) {
+        padding: 24px 0 19px 26px;
+
+        &:nth-child(3n) {
+          & h3 {
+            margin: 1px 0 17px 0;
+          }
+        }
+      }
+
+      @media (max-width: $mobile-max-width) {
+        padding: 24px 0 24px 26px;
+
+        &:first-child,
+        &:last-child {
+          & p {
+            max-width: 245px;
+          }
+        }
+      }
     }
 
     & p {
-      width: 483px;
-      height: 103px;
+      max-width: 483px;
+      min-height: 103px;
       margin: 0 0 0 0;
       color: #666666;
+
+      @media (max-width: $tablet-max-width) {
+        max-width: 297px;
+      }
+
+      @media (max-width: $mobile-max-width) {
+        max-width: 250px;
+      }
     }
   }
 
@@ -57,22 +142,88 @@
     background: url("../../img/content/2005.png") -3% 7px no-repeat;
     padding: 0 0 10px 180px;
 
+    @media (max-width: $tablet-max-width) {
+      padding: 0 0 10px 186px;
+      background-size: 35% 100%;
+      background-position: -7% 5%;
+    }
+
+    @media (max-width: $mobile-max-width) {
+      padding: 0;
+      background: none;
+    }
+
     & h3 {
       font-family: "Roboto Condensed", "Arial", sans-serif;
 
       @include font-parametrs(400, 36px, 51px);
       margin: 0 0 22px 0;
+
+      @media (max-width: $tablet-max-width) {
+        @include font-parametrs(400, 32px, 45px);
+      }
+
+      @media (max-width: $mobile-max-width) {
+        @include font-parametrs(400, 28px, 39px);
+      }
     }
 
-    & p {
+    & div {
       max-width: 984px;
       min-height: 174px;
       margin: 0 0 15px 0;
+
+      & p:first-child {
+        margin: 0 0 24px 0;
+      }
+
+      & p:last-child {
+        margin: 0;
+      }
+
+      & span {
+        display: none;
+      }
+
+      @media (max-width: $tablet-max-width) {
+        max-width: 532px;
+        max-height: 201px;
+        overflow-y: hidden;
+        padding: 0 0 0 3px;
+        margin: 0 0 38px 0;
+
+        & span {
+          display: inline;
+        }
+
+        @media (max-width: $mobile-max-width) {
+          max-height: 350px;
+          padding: 0;
+          margin: 0 0 26px 0;
+
+          & p:first-child {
+            margin: 0 0 40px 0;
+          }
+
+          & p:last-child {
+            margin: 0;
+          }
+        }
+      }
     }
 
     & a {
       border: 1px solid $blue;
       color: $blue;
+
+      &:hover {
+        color: $white;
+        background-color: $blue;
+      }
+
+      @media (max-width: $tablet-max-width) {
+        margin: 0 0 0 3px;
+      }
     }
   }
 }
