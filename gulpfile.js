@@ -28,9 +28,9 @@ const styles = () => {
       autoprefixer(),
       csso()
     ]))
-    .pipe(rename("style.min.css"))
+    .pipe(rename("style.css"))
     .pipe(sourcemap.write("."))
-    .pipe(gulp.dest("build/css"))
+    .pipe(gulp.dest("source/css"))
     .pipe(sync.stream());
 }
 
@@ -92,7 +92,7 @@ exports.clean = clean;
 const server = (done) => {
   sync.init({
     server: {
-      baseDir: 'build'
+      baseDir: 'source'
     },
     cors: true,
     notify: false,
@@ -119,7 +119,7 @@ const sprite = () => {
       inlineSvg: true
     }))
     .pipe(rename("sprite.svg"))
-    .pipe(gulp.dest("build/img/icons/sprite-icons"));
+    .pipe(gulp.dest("source/img/icons/sprite-icons"));
 }
 
 exports.sprite = sprite;
@@ -164,7 +164,7 @@ exports.default = gulp.series(
   copyImages,
   gulp.parallel(
     styles,
-    sprite,
+    // sprite,
   ),
   gulp.series(
     server,
