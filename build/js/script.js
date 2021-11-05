@@ -1,6 +1,5 @@
 let tumbler = document.querySelectorAll('.tumbler');
 let copyrightElement = document.getElementById('element_2');
-let screenWindow = window.matchMedia("(max-width: 1023px)");
 let socialBlock = document.querySelector('.contacts__social');
 let orderCall = document.querySelector('.page-header__button');
 let popup = document.querySelector('.popup');
@@ -65,3 +64,40 @@ window.addEventListener('click', function (e) {
   const target = e.target;
   if (!target.closest('.popup') && !target.closest('.page-header__button')) closePopup();
 });
+
+//Mask
+
+let inputTel = document.querySelectorAll('input[data-tel-field="tel"]');
+let im = new Inputmask('+7 (999) 999-99-99');
+im.mask(inputTel);
+
+// Scroll to the anchor
+
+document.querySelector('.promo__info a[href^="#"]').addEventListener('click', function (evt) {
+  evt.preventDefault();
+  // iconBurger.classList.remove('active');
+  // navMain.classList.remove('active');
+  // mainPage.classList.remove('page--modal-open');
+  document.querySelector(this.getAttribute('href')).scrollIntoView({
+    behavior: 'smooth'
+  });
+});
+
+
+
+//JustValidate
+
+// let validateForms = function (selector, rules, succesModal, yaGoal) {
+//   new window.JustValidate(selector, {
+//     rules: rules,
+//     submitHandler: function (form) {
+
+//     }
+//   });
+// }
+
+// validateForms('.feedback__form', {
+//   tel: {
+//     required: true
+//   }
+// }, '.thanks-popup', 'send goal');

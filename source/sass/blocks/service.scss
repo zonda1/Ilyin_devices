@@ -9,7 +9,7 @@
   &__wrapper {
     max-width: 1170px;
     margin: 0 auto;
-    padding: 93px 0 127px 0;
+    padding: 90px 0 97px 0;
 
     @media (max-width: $tablet-max-width) {
       max-width: 720px;
@@ -26,11 +26,12 @@
 
       @include font-parametrs(400, 36px, 51px);
       color: $white;
-      margin: -2px 0 49px 0;
+      margin: -2px 0 51px 0;
 
       @media (max-width: $tablet-max-width) {
         @include font-parametrs(400, 32px, 45px);
         max-width: 613px;
+        margin: -2px 0 47px 0;
       }
 
       @media (max-width: $mobile-max-width) {
@@ -45,6 +46,7 @@
       flex-wrap: wrap;
       justify-content: space-between;
 
+
       @media (max-width: $tablet-max-width) {
         display: block;
       }
@@ -54,7 +56,24 @@
       flex: 0 0 31.62%;
       height: 620px;
       position: relative;
-      cursor: pointer;
+      margin: 0 30px 30px 0;
+
+      // cursor: pointer;
+      &:last-child {
+        margin: 0 0 0 0;
+
+        @media (max-width: $tablet-max-width) {
+          & h3 {
+            top: 30px;
+          }
+        }
+
+        @media (max-width: $mobile-max-width) {
+          & h3 {
+            top: 12px;
+          }
+        }
+      }
 
       @media (max-width: $tablet-max-width) {
         height: 256px;
@@ -69,98 +88,122 @@
         margin: 0 0 30px 0;
       }
 
-      &::before {
-        content: "";
-        display: block;
-        width: 100%;
-        height: inherit;
-        position: absolute;
-        top: 0;
-        left: 0;
-        background: inherit;
-        background-size: cover;
-        opacity: 0.2;
-      }
+      // &::before {
+      //   content: "";
+      //   display: block;
+      //   width: 100%;
+      //   height: inherit;
+      //   position: absolute;
+      //   top: 0;
+      //   left: 0;
+      //   background: inherit;
+      //   background-size: cover;
+      //   opacity: 0.2;
+      // }
 
-      &:hover::before {
-        opacity: 0.5;
-      }
+      // &:hover::before {
+      //   opacity: 0.5;
+      // }
 
       & h3 {
         font-family: "Roboto Condensed", "Arial", sans-serif;
 
         @include font-parametrs(400, 20px, 30px);
         color: $white;
-        margin: 52px 0 0 44px;
+        // margin: 52px 0 0 44px;
         min-height: 60px;
+        position: absolute;
+        top: 31px;
+        left: 44px;
 
         @media (max-width: $tablet-max-width) {
-          margin: 40px 0 0 44px;
+          top: 20px;
+          left: 46px;
+          // margin: 40px 0 0 44px;
         }
 
         @media (max-width: $mobile-max-width) {
-          margin: 23px 0 0 35px;
+          top: 0;
+          left: 35px;
+          // margin: 23px 0 0 35px;
         }
       }
 
-      &:first-child {
-        background: url("../../img/content/device-1_dktp.jpg") 50%;
-        background-size: 0 0;
+      // &:first-child {
+      //   background: url("../../img/content/device-1_dktp.jpg") 50%;
+      // background-size: 0 0;
 
-        @media (max-width: $tablet-max-width) {
-          background: url("../../img/content/device-1_tab.jpg") 50%;
-          background-size: 0 0;
-        }
+      //   @media (max-width: $tablet-max-width) {
+      //     background: url("../../img/content/device-1_tab.jpg") 50%;
+      // background-size: 0 0;
+      //   }
 
-        @media (max-width: $mobile-max-width) {
-          background: url("../../img/content/device-1_mob.jpg") 50%;
-          background-size: 0 0;
-        }
-      }
+      //   @media (max-width: $mobile-max-width) {
+      //     background: url("../../img/content/device-1_mob.jpg") 50%;
+      // background-size: 0 0;
+      //   }
+      // }
 
-      &:nth-child(2n) {
-        background: url("../../img/content/device-2_dktp.jpg");
-        background-size: 0 0;
+      // &:nth-child(2n) {
+      //   background: url("../../img/content/device-2_dktp.jpg");
+      //   background-size: 0 0;
 
-        @media (max-width: $tablet-max-width) {
-          background: url("../../img/content/device-2_tab.jpg");
-          background-size: 0 0;
-        }
+      //   @media (max-width: $tablet-max-width) {
+      //     background: url("../../img/content/device-2_tab.jpg");
+      //     background-size: 0 0;
+      //   }
 
-        @media (max-width: $mobile-max-width) {
-          background: url("../../img/content/device-2_mob.jpg");
-          background-size: 0 0;
-        }
-      }
+      //   @media (max-width: $mobile-max-width) {
+      //     background: url("../../img/content/device-2_mob.jpg");
+      //     background-size: 0 0;
+      //   }
+      // }
 
-      &:nth-child(3n) {
-        background: url("../../img/content/device-3_dktp.jpg");
-        background-size: 0 0;
+      // &:nth-child(3n) {
+      //   background: url("../../img/content/device-3_dktp.jpg");
+      //   background-size: 0 0;
 
-        @media (max-width: $tablet-max-width) {
-          background: url("../../img/content/device-3_tab.jpg");
-          background-size: 0 0;
+      //   @media (max-width: $tablet-max-width) {
+      //     background: url("../../img/content/device-3_tab.jpg");
+      //     background-size: 0 0;
 
-          & h3 {
-            margin: 48px 0 0 46px;
-          }
-        }
+      //     & h3 {
+      //       margin: 48px 0 0 46px;
+      //     }
+      //   }
 
-        @media (max-width: $mobile-max-width) {
-          background: url("../../img/content/device-3_mob.jpg");
-          background-size: 0 0;
+      //   @media (max-width: $mobile-max-width) {
+      //     background: url("../../img/content/device-3_mob.jpg");
+      //     background-size: 0 0;
 
-          & h3 {
-            margin: 30px 0 0 35px;
-          }
-        }
-      }
+      //     & h3 {
+      //       margin: 30px 0 0 35px;
+      //     }
+      //   }
+      // }
 
       & a {
         height: 100%;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+      }
+
+      & img {
+        opacity: 0.2;
+
+        @media (max-width: $tablet-max-width) {
+          width: 720px;
+          height: 256px;
+        }
+
+        @media (max-width: $mobile-max-width) {
+          width: 290px;
+        }
+
+        &:hover {
+          opacity: 0.5;
+        }
       }
 
       & span {
@@ -171,7 +214,13 @@
         justify-content: center;
         align-items: center;
         background-color: #00b2ff;
-        z-index: 2;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+      }
+
+      & svg {
+        fill: none;
       }
     }
   }

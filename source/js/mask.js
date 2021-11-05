@@ -79,30 +79,29 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 })
 
-// Validation
-for (let phoneInput of phoneInputs) {
-  console.log(phoneInput);
+// for (let phoneInput of phoneInputs) {
+//   console.log(phoneInput);
 
-  function validPhone() {
-    if (!validate(re, phoneInput.value)) {
-      isInValid(phoneInput);
-      return false;
-    } else {
-      isValid(phoneInput);
-      return true;
-    }
-  }
+//   function validPhone() {
+//     if (!validate(re, phoneInput.value)) {
+//       isInValid(phoneInput);
+//       return false;
+//     } else {
+//       isValid(phoneInput);
+//       return true;
+//     }
+//   }
 
-  function validate(regex, inp) {
-    return regex.test(inp);
-  }
+//   function validate(regex, inp) {
+//     return regex.test(inp);
+//   }
 
-  function isValid(inp) {
-    inp.classList.remove('is-invalid');
-    inp.classList.add('is-valid');
-  }
+//   function isValid(inp) {
+//     inp.classList.remove('is-invalid');
+//     inp.classList.add('is-valid');
+//   }
 
-  function isInValid(inp) {
-    inp.classList.add('is-invalid');
-  }
-}
+//   function isInValid(inp) {
+//     inp.classList.add('is-invalid');
+//   }
+// }

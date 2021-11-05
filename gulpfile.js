@@ -21,7 +21,7 @@ const cheerio = require("gulp-cheerio");
 
 const styles = () => {
   return gulp.src("source/sass/style.scss")
-    .pipe(plumber())
+    // .pipe(plumber())
     .pipe(sourcemap.init())
     .pipe(sass())
     .pipe(postcss([
@@ -49,7 +49,7 @@ const optimizeImages = () => {
       }),
       imagemin.svgo()
     ]))
-    .pipe(gulp.dest("build/img"))
+    .pipe(gulp.dest("source/img"))
 }
 
 exports.optimizeImages = optimizeImages;
@@ -60,6 +60,18 @@ const copyImages = () => {
 }
 
 exports.copyImages = copyImages;
+
+// WebP
+
+const createWebp = () => {
+  return gulp.src("source/img/**/*.{jpg,png,svg}")
+    .pipe(webp({
+      quality: 90
+    }))
+    .pipe(gulp.dest("source/img"))
+}
+
+exports.createWebp = createWebp;
 
 
 // Copy
@@ -151,6 +163,7 @@ const build = gulp.series(
   gulp.parallel(
     styles,
     sprite,
+    createWebp,
   ),
 );
 
@@ -165,6 +178,7 @@ exports.default = gulp.series(
   gulp.parallel(
     styles,
     // sprite,
+    createWebp,
   ),
   gulp.series(
     server,

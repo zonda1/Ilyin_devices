@@ -14,7 +14,7 @@
 
   @media (max-width: $mobile-max-width) {
     background:
-      url("../../img/content/triangles-feedback.png") -73% -29%/522.82px 483.82px no-repeat,
+      url("../../img/content/triangles-feedback-mobile.png") 100% 0% no-repeat,
       url("../../img/content/promo-ruffle.png"),
       $dark-blue;
   }
@@ -25,16 +25,26 @@
     padding: 316px 177px 292px 249px;
     background: url("../../img/content/board_dktp.png") 85.5% 71% no-repeat;
 
+    @media (min-resolution: 2dppx) {
+      background: url("../../img/content/board_dktp@2x.png") 85.5% 71%/705px 515px no-repeat;
+    }
+
     @media (max-width: $tablet-max-width) {
       padding: 188px 212px 180px 88px;
-      background-size: 465px 340px;
-      background-position: 168.5% 33%;
+      background: url("../../img/content/board_dktp.png") 168.5% 33%/465px 340px no-repeat;
+
+      @media (min-resolution: 2dppx) {
+        background: url("../../img/content/board_dktp@2x.png") 168.5% 33%/465px 340px no-repeat;
+      }
     }
 
     @media (max-width: $mobile-max-width) {
       padding: 286px 15px 87px 15px;
-      background-size: 301px 220px;
-      background-position: 136.5% 21.5%;
+      background: url("../../img/content/board_dktp.png") 136.5% 21.5%/301px 220px no-repeat;
+
+      @media (min-resolution: 2dppx) {
+        background: url("../../img/content/board_dktp.png") 136.5% 21.5%/301px 220px no-repeat;
+      }
     }
 
     & h2 {
@@ -48,6 +58,7 @@
 
       @media (max-width: $tablet-max-width) {
         @include font-parametrs(700, 60px, 70px);
+        margin: 0 0 28px 0;
       }
 
       @media (max-width: $mobile-max-width) {
@@ -58,7 +69,7 @@
   }
 
   &__info {
-    padding: 0 0 0 94px;
+    padding: 0 0 0 97px;
 
     @media (max-width: $tablet-max-width) {
       padding: 0 0 0 51px;
@@ -80,7 +91,7 @@
         content: "";
         width: 66px;
         height: 2px;
-        top: 15px;
+        top: 16px;
         left: -94px;
         background-color: $white;
       }
