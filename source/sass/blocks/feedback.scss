@@ -166,7 +166,7 @@
       }
     }
 
-    & input+label::before {
+    & input + label::before {
       content: "";
       position: absolute;
       left: 0;
@@ -176,7 +176,7 @@
       border: 1px solid $white;
     }
 
-    & input:checked+label::after {
+    & input:checked + label::after {
       content: "";
       position: absolute;
       top: 7px;
@@ -211,12 +211,4 @@
       }
     }
   }
-}
-
-.is-invalid {
-  background-color: red;
-}
-
-.is-valid {
-  background-color: green;
 }

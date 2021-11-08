@@ -7,13 +7,16 @@ let callingName = popup.querySelector('[name="popup-name"]');
 let buttonClose = document.getElementById('close-link');
 let contacts = document.querySelectorAll('.contacts__contacts');
 
+let feedbackForm = document.querySelector('.feedback__form');
+let popupForm = document.querySelector('.popup__form');
+
 for (i = 0; i < contacts.length; i++) {
   contacts[i].classList.remove('no-js');
 }
 
 tumbler.forEach((element) => {
   element.addEventListener('click', () => {
-    const parent = element.parentNode;
+    let parent = element.parentNode;
     if (parent.classList.contains('active')) {
       parent.classList.remove('active');
     } else {
@@ -36,7 +39,7 @@ function copyElement(screen) {
 }
 
 window.onresize = function () {
-  const windowInnerWidth = window.innerWidth;
+  let windowInnerWidth = window.innerWidth;
   copyElement(windowInnerWidth);
 };
 
@@ -61,23 +64,20 @@ window.addEventListener('keydown', function (evt) {
 });
 
 window.addEventListener('click', function (e) {
-  const target = e.target;
+  let target = e.target;
   if (!target.closest('.popup') && !target.closest('.page-header__button')) closePopup();
 });
 
 //Mask
 
-let inputTel = document.querySelectorAll('input[data-tel-field="tel"]');
+let inputTels = document.querySelectorAll('input[data-validate-field="tel"]');
 let im = new Inputmask('+7 (999) 999-99-99');
-im.mask(inputTel);
+im.mask(inputTels);
 
 // Scroll to the anchor
 
 document.querySelector('.promo__info a[href^="#"]').addEventListener('click', function (evt) {
   evt.preventDefault();
-  // iconBurger.classList.remove('active');
-  // navMain.classList.remove('active');
-  // mainPage.classList.remove('page--modal-open');
   document.querySelector(this.getAttribute('href')).scrollIntoView({
     behavior: 'smooth'
   });
@@ -85,19 +85,68 @@ document.querySelector('.promo__info a[href^="#"]').addEventListener('click', fu
 
 
 
-//JustValidate
+// Validation
 
-// let validateForms = function (selector, rules, succesModal, yaGoal) {
-//   new window.JustValidate(selector, {
-//     rules: rules,
-//     submitHandler: function (form) {
+//JustValidate popup
 
-//     }
-//   });
-// }
+new window.JustValidate('.popup__form', {
+  rules: {
+    tel: {
+      required: true,
+    },
+  },
+  colorWrong: 'red',
+  focusWrongField: true,
 
-// validateForms('.feedback__form', {
-//   tel: {
-//     required: true
-//   }
-// }, '.thanks-popup', 'send goal');
+  submitHandler: function (forms, values, ajax) {
+    ajax({
+      url: 'https://echo.htmlacademy.ru/',
+      method: 'POST',
+      data: values,
+      async: true,
+      callback: function (response) {
+        popupForm.reset();
+        alert('AJAX submit successful! \nResponse from server:' + response)
+      },
+      error: function (response) {
+        alert('AJAX submit error! \nResponse from server:' + response)
+      }
+    });
+  },
+
+  invalidFormCallback: function (errors) {
+    console.log(errors);
+  },
+});
+
+//JustValidate feedback
+
+new window.JustValidate('.feedback__form', {
+  rules: {
+    tel: {
+      required: true,
+    },
+  },
+  colorWrong: 'red',
+  focusWrongField: true,
+
+  submitHandler: function (forms, values, ajax) {
+    ajax({
+      url: 'https://echo.htmlacademy.ru/',
+      method: 'POST',
+      data: values,
+      async: true,
+      callback: function (response) {
+        feedbackForm.reset();
+        alert('AJAX submit successful! \nResponse from server:' + response)
+      },
+      error: function (response) {
+        alert('AJAX submit error! \nResponse from server:' + response)
+      }
+    });
+  },
+
+  invalidFormCallback: function (errors) {
+    console.log(errors);
+  },
+});

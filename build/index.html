@@ -6,10 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Магазин микросхем</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="preload" href="fonts/roboto-condensed-v19-latin_cyrillic-ext-regular.woff2" as="font" crossorigin>
+  <link rel="preload" href="fonts/roboto-condensed-v19-latin_cyrillic-ext-700.woff2" as="font" crossorigin>
+  <link rel="preload" href="fonts/pt-mono-v8-latin_cyrillic-ext-regular.woff2" as="font" crossorigin>
+  <link rel="stylesheet" href="css/style.min.css">
 </head>
-
-
 
 <body class="page">
   <div class="wrapper">
@@ -23,12 +24,12 @@
         </a>
         <ul>
           <li>
-            <a href="mailto"><svg width="19" height="14">
+            <a href="mailto"><svg viewbox="0 0 19 14" width="19" height="14">
                 <use xlink:href="img/icons/sprite-icons/sprite.svg#mail"></use>
               </svg><span>info@sd.ru</span></a>
           </li>
           <li>
-            <a href="tel:+74950005252"><svg width="18" height="18">
+            <a href="tel:+74950005252"><svg viewbox="0 0 18 18" width="18" height="18">
                 <use xlink:href="img/icons/sprite-icons/sprite.svg#phone"></use>
               </svg><span>+7 (495) 000 52 52</span></a>
           </li>
@@ -59,9 +60,9 @@
             <h2>Закажите звонок</h2>
             <p>Оставьте контакты, мы проконсультируем вас бесплатно в удобное время</p>
           </div>
-          <form action="https://echo.htmlacademy.ru" method="POST" class="popup__form" autocomplete="off">
+          <form action="https://echo.htmlacademy.ru" method="POST" class="popup__form form" autocomplete="off">
             <label for="popup-name"><input type="text" name="popup-name" id="popup-name" placeholder="Имя"></label>
-            <label for="popup-tel"><input type="tel" data-tel-field="tel" name="popup-tel" id="popup-tel"
+            <label for="popup-tel"><input data-validate-field="tel" type="tel" name="popup-tel" id="popup-tel"
                 placeholder="Телефон"></label>
             <textarea name="question" id="question" cols="30" rows="10" placeholder="Ваш вопрос"></textarea>
             <button class="button" type="submit">Отправить</button>
@@ -157,7 +158,7 @@
                   <source media="(max-width:1023px)"
                     srcset="img/content/device-1_tab.jpg 1x, img/content/device-1_tab@2x.jpg 2x">
                   <!-- 1х: 370px*620px; 2x: 540px*1240px -->
-                  <img src="img/content/device-1_dktp.jpg 1x" srcset="img/content/device-1_dktp@2x.jpg 2x" width="370"
+                  <img src="img/content/device-1_dktp.jpg" srcset="img/content/device-1_dktp@2x.jpg 2x" width="370"
                     height="620" alt="Производство печатной платы">
                 </picture>
                 <span>
@@ -184,7 +185,8 @@
                   <source media="(max-width:1023px)"
                     srcset="img/content/device-2_tab.jpg 1x, img/content/device-2_tab@2x.jpg 2x">
                   <!-- 1х: 370px*620px; 2x: 540px*1240px -->
-                  <img src="img/content/device-2_dktp.jpg" width="370" height="620" alt="Монтаж печатной платы">
+                  <img src="img/content/device-2_dktp.jpg" srcset="img/content/device-2_dktp@2x.jpg 2x" width="370"
+                    height="620" alt="Монтаж печатной платы">
                 </picture>
                 <span>
                   <svg width="6" height="9">
@@ -210,7 +212,8 @@
                   <source media="(max-width:1023px)"
                     srcset="img/content/device-3_tab.jpg 1x, img/content/device-3_tab@2x.jpg 2x">
                   <!-- 1х: 370px*620px; 2x: 540px*1240px -->
-                  <img src="img/content/device-3_dktp.jpg" width="370" height="620" alt="Светодиодная лента">
+                  <img src="img/content/device-3_dktp.jpg" srcset="img/content/device-3_dktp@2x.jpg 2x" width="370"
+                    height="620" alt="Светодиодная лента">
                 </picture>
                 <span>
                   <svg width="6" height="9">
@@ -219,6 +222,7 @@
                 </span>
               </a>
             </li>
+
           </ul>
         </div>
       </section>
@@ -229,9 +233,9 @@
             <h2>Остались вопросы? Задайте их нам!</h2>
             <p>Мы проконсультируем Вас бесплатно</p>
           </div>
-          <form action="https://echo.htmlacademy.ru" method="POST" class="feedback__form" autocomplete="off">
+          <form action="https://echo.htmlacademy.ru" method="POST" class="feedback__form form" autocomplete="off">
             <label for="name"><input type="text" name="name" id="name" placeholder="Имя" required></label>
-            <label for="tel"><input class="form__input form-control" type="tel" data-tel-field="tel" name="tel" id="tel"
+            <label for="tel"><input type="tel" data-validate-field="tel" name="tel" id="tel"
                 placeholder="Телефон"></label>
             <textarea name="popup-question" id="popup-question" cols="30" rows="10" placeholder="Ваш вопрос"
               required></textarea>
@@ -242,11 +246,9 @@
               данных</label>
           </form>
         </div>
-
       </section>
 
     </main>
-
 
     <footer class="page-footer">
       <div class="page-footer__wrapper row">
@@ -310,9 +312,8 @@
     </footer>
 
   </div>
-
   <script src="js/inputmask.min.js"></script>
-  <!-- <script src="js/just-validate.min.js"></script> -->
+  <script src="js/just-validate.min.js"></script>
   <script src="js/script.js"></script>
 </body>
 

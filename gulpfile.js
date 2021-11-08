@@ -21,16 +21,16 @@ const cheerio = require("gulp-cheerio");
 
 const styles = () => {
   return gulp.src("source/sass/style.scss")
-    // .pipe(plumber())
+    .pipe(plumber())
     .pipe(sourcemap.init())
     .pipe(sass())
     .pipe(postcss([
       autoprefixer(),
       csso()
     ]))
-    .pipe(rename("style.css"))
+    .pipe(rename("style.min.css"))
     .pipe(sourcemap.write("."))
-    .pipe(gulp.dest("source/css"))
+    .pipe(gulp.dest("build/css"))
     .pipe(sync.stream());
 }
 
@@ -49,7 +49,7 @@ const optimizeImages = () => {
       }),
       imagemin.svgo()
     ]))
-    .pipe(gulp.dest("source/img"))
+    .pipe(gulp.dest("build/img"))
 }
 
 exports.optimizeImages = optimizeImages;
@@ -68,7 +68,7 @@ const createWebp = () => {
     .pipe(webp({
       quality: 90
     }))
-    .pipe(gulp.dest("source/img"))
+    .pipe(gulp.dest("build/img"))
 }
 
 exports.createWebp = createWebp;
@@ -104,7 +104,7 @@ exports.clean = clean;
 const server = (done) => {
   sync.init({
     server: {
-      baseDir: 'source'
+      baseDir: 'build'
     },
     cors: true,
     notify: false,
@@ -124,14 +124,14 @@ const sprite = () => {
         $('[fill]').removeAttr('fill');
       },
       parserOptions: {
-        xmlMode: true
+        xmlMode: false
       }
     }))
     .pipe(svgstore({
       inlineSvg: true
     }))
     .pipe(rename("sprite.svg"))
-    .pipe(gulp.dest("source/img/icons/sprite-icons"));
+    .pipe(gulp.dest("build/img/icons/sprite-icons"));
 }
 
 exports.sprite = sprite;
@@ -177,7 +177,7 @@ exports.default = gulp.series(
   copyImages,
   gulp.parallel(
     styles,
-    // sprite,
+    sprite,
     createWebp,
   ),
   gulp.series(

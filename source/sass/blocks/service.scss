@@ -56,9 +56,8 @@
       flex: 0 0 31.62%;
       height: 620px;
       position: relative;
-      margin: 0 30px 30px 0;
+      margin: 0 0 30px 0;
 
-      // cursor: pointer;
       &:last-child {
         margin: 0 0 0 0;
 
@@ -88,23 +87,6 @@
         margin: 0 0 30px 0;
       }
 
-      // &::before {
-      //   content: "";
-      //   display: block;
-      //   width: 100%;
-      //   height: inherit;
-      //   position: absolute;
-      //   top: 0;
-      //   left: 0;
-      //   background: inherit;
-      //   background-size: cover;
-      //   opacity: 0.2;
-      // }
-
-      // &:hover::before {
-      //   opacity: 0.5;
-      // }
-
       & h3 {
         font-family: "Roboto Condensed", "Arial", sans-serif;
 
@@ -119,68 +101,13 @@
         @media (max-width: $tablet-max-width) {
           top: 20px;
           left: 46px;
-          // margin: 40px 0 0 44px;
         }
 
         @media (max-width: $mobile-max-width) {
           top: 0;
           left: 35px;
-          // margin: 23px 0 0 35px;
         }
       }
-
-      // &:first-child {
-      //   background: url("../../img/content/device-1_dktp.jpg") 50%;
-      // background-size: 0 0;
-
-      //   @media (max-width: $tablet-max-width) {
-      //     background: url("../../img/content/device-1_tab.jpg") 50%;
-      // background-size: 0 0;
-      //   }
-
-      //   @media (max-width: $mobile-max-width) {
-      //     background: url("../../img/content/device-1_mob.jpg") 50%;
-      // background-size: 0 0;
-      //   }
-      // }
-
-      // &:nth-child(2n) {
-      //   background: url("../../img/content/device-2_dktp.jpg");
-      //   background-size: 0 0;
-
-      //   @media (max-width: $tablet-max-width) {
-      //     background: url("../../img/content/device-2_tab.jpg");
-      //     background-size: 0 0;
-      //   }
-
-      //   @media (max-width: $mobile-max-width) {
-      //     background: url("../../img/content/device-2_mob.jpg");
-      //     background-size: 0 0;
-      //   }
-      // }
-
-      // &:nth-child(3n) {
-      //   background: url("../../img/content/device-3_dktp.jpg");
-      //   background-size: 0 0;
-
-      //   @media (max-width: $tablet-max-width) {
-      //     background: url("../../img/content/device-3_tab.jpg");
-      //     background-size: 0 0;
-
-      //     & h3 {
-      //       margin: 48px 0 0 46px;
-      //     }
-      //   }
-
-      //   @media (max-width: $mobile-max-width) {
-      //     background: url("../../img/content/device-3_mob.jpg");
-      //     background-size: 0 0;
-
-      //     & h3 {
-      //       margin: 30px 0 0 35px;
-      //     }
-      //   }
-      // }
 
       & a {
         height: 100%;
