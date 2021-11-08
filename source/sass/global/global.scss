@@ -53,9 +53,3 @@ a {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
-
-@media (max-width: $tablet-max-width) {
-  head {
-    width: 1023px;
-  }
-}

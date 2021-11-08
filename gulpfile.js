@@ -61,6 +61,18 @@ const copyImages = () => {
 
 exports.copyImages = copyImages;
 
+// WebP
+
+const createWebp = () => {
+  return gulp.src("source/img/**/*.{jpg,png,svg}")
+    .pipe(webp({
+      quality: 90
+    }))
+    .pipe(gulp.dest("build/img"))
+}
+
+exports.createWebp = createWebp;
+
 
 // Copy
 
@@ -112,7 +124,7 @@ const sprite = () => {
         $('[fill]').removeAttr('fill');
       },
       parserOptions: {
-        xmlMode: true
+        xmlMode: false
       }
     }))
     .pipe(svgstore({
@@ -151,6 +163,7 @@ const build = gulp.series(
   gulp.parallel(
     styles,
     sprite,
+    createWebp,
   ),
 );
 
@@ -165,6 +178,7 @@ exports.default = gulp.series(
   gulp.parallel(
     styles,
     sprite,
+    createWebp,
   ),
   gulp.series(
     server,

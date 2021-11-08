@@ -19,6 +19,7 @@
     "gulp-svgstore": "^7.0.1",
     "gulp-terser": "^2.0.1",
     "gulp-webp": "^4.0.1",
+    "imask": "^6.2.2",
     "postcss": "8.2.8",
     "postcss-csso": "^5.0.1",
     "postcss-reporter": "^7.0.2",

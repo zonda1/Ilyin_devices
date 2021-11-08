@@ -46,6 +46,13 @@
       color: $white;
     }
 
+    & img {
+      @media (max-width: $mobile-max-width) {
+        width: 38px;
+        height: 38px;
+      }
+    }
+
     & li:first-child {
       margin-right: 88px;
       height: 100%;
