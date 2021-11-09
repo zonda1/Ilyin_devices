@@ -1,15 +1,15 @@
 .benefits {
-  background: url("../../img/content/polygon-top.png") 12% 4.5% no-repeat,
-    url("../../img/content/polygon-center.png") 53.3% 37% no-repeat,
-    url("../../img/content/polygon-left.png") 0 112% no-repeat,
-    url("../../img/content/polygon-right.png") 98.5% 46% no-repeat;
+  background: url("../img/content/polygon-top.png") 12% 4.5% no-repeat,
+    url("../img/content/polygon-center.png") 53.3% 37% no-repeat,
+    url("../img/content/polygon-left.png") 0 112% no-repeat,
+    url("../img/content/polygon-right.png") 98.5% 46% no-repeat;
 
   @media (max-width: $tablet-max-width) {
-    background: url("../../img/content/polygon-center_tablet.png") 101.3% 26% no-repeat;
+    background: url("../img/content/polygon-center_tablet.png") 101.3% 26% no-repeat;
   }
 
   @media (max-width: $mobile-max-width) {
-    background: url("../../img/content/polygon-center_tablet.png") 50.3% 71% no-repeat;
+    background: url("../img/content/polygon-center_tablet.png") 50.3% 71% no-repeat;
   }
 
   &__wrapper {
@@ -27,8 +27,8 @@
     }
 
     @media (max-width: $mobile-max-width) {
-      max-width: 290px;
-      padding: 37px 0 65px 0;
+      // max-width: 290px;
+      padding: 37px 15px 65px;
     }
   }
 
@@ -114,12 +114,14 @@
 
         &:first-child,
         &:last-child {
+          padding: 24px 17px 24px 26px;
+
           & p {
-            max-width: 245px;
+            max-width: 100%;
           }
         }
 
-        &:first-child + li {
+        &:first-child+li {
           & h3 {
             margin: 5px 0 8px 0;
           }
@@ -143,6 +145,10 @@
       &:last-child {
         @media (max-width: $tablet-max-width) {
           padding: 24px 0 17px 26px;
+        }
+
+        @media (max-width: $mobile-max-width) {
+          padding: 24px 17px 17px 26px;
         }
 
         & h3 {
@@ -170,13 +176,13 @@
       }
 
       @media (max-width: $mobile-max-width) {
-        max-width: 250px;
+        max-width: 100%;
       }
     }
   }
 
   &__info {
-    background: url("../../img/content/2005.png") -3% 2px no-repeat;
+    background: url("../img/content/2005.png") -3% 2px no-repeat;
     padding: 0 0 10px 180px;
 
     @media (max-width: $tablet-max-width) {

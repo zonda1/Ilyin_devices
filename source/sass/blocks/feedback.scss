@@ -1,7 +1,7 @@
 .feedback {
-  background: url("../../img/content/triangles-feedback.png") 14% -200% no-repeat,
-    url("../../img/content/Polygon-top_feedback.png") 94.2% 19.5% no-repeat,
-    url("../../img/content/Polygon-bottom_feedback.png") 100% 83% no-repeat,
+  background: url("../img/content/triangles-feedback.png") 14% -200% no-repeat,
+    url("../img/content/Polygon-top_feedback.png") 94.2% 19.5% no-repeat,
+    url("../img/content/Polygon-bottom_feedback.png") 100% 83% no-repeat,
     $blue;
 
   @media (max-width: $tablet-max-width) {
@@ -54,7 +54,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    background: url("../../img/content/paper-plane.png") 25% 42.5% no-repeat;
+    background: url("../img/content/paper-plane.png") 25% 42.5% no-repeat;
 
 
     @media (max-width: 1800px) {
@@ -62,19 +62,18 @@
     }
 
     @media (max-width: 1200px) {
-      align-items: flex-start;
+      align-items: center;
       padding: 79px 150px 108.1px 100px;
       background: none;
     }
 
     @media (max-width: $tablet-max-width) {
-      align-items: flex-start;
+      align-items: stretch;
       padding: 79px 87px 108.1px 92.15px;
       background: none;
     }
 
     @media (max-width: $mobile-max-width) {
-      align-items: center;
       padding: 31px 15px 41px;
     }
   }
@@ -161,12 +160,16 @@
         color: rgba($white, 0.5);
       }
 
+      @media (max-width: $tablet-max-width) {
+        margin: 14px 0 0 9px;
+      }
+
       @media (max-width: $mobile-max-width) {
         margin: 4px 0 0 2px;
       }
     }
 
-    & input + label::before {
+    & input+label::before {
       content: "";
       position: absolute;
       left: 0;
@@ -174,9 +177,10 @@
       width: 16px;
       height: 16px;
       border: 1px solid $white;
+      cursor: pointer;
     }
 
-    & input:checked + label::after {
+    & input:checked+label::after {
       content: "";
       position: absolute;
       top: 7px;

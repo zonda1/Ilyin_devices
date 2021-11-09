@@ -6,6 +6,7 @@ let popup = document.querySelector('.popup');
 let callingName = popup.querySelector('[name="popup-name"]');
 let buttonClose = document.getElementById('close-link');
 let contacts = document.querySelectorAll('.contacts__contacts');
+let mainPage = document.querySelector('.page');
 
 let feedbackForm = document.querySelector('.feedback__form');
 let popupForm = document.querySelector('.popup__form');
@@ -48,11 +49,14 @@ window.onresize = function () {
 
 let closePopup = function () {
   popup.classList.remove('popup-open');
+  mainPage.classList.remove('page--modal-open');
 }
 
-orderCall.addEventListener('click', () => {
+orderCall.addEventListener('click', (evt) => {
+  evt.preventDefault();
   popup.classList.add('popup-open');
   callingName.focus();
+  mainPage.classList.add('page--modal-open');
 });
 
 buttonClose.addEventListener('click', closePopup);
@@ -91,6 +95,12 @@ document.querySelector('.promo__info a[href^="#"]').addEventListener('click', fu
 
 new window.JustValidate('.popup__form', {
   rules: {
+    name: {
+      required: true,
+    },
+    checkbox: {
+      required: true,
+    },
     tel: {
       required: true,
     },
@@ -123,6 +133,12 @@ new window.JustValidate('.popup__form', {
 
 new window.JustValidate('.feedback__form', {
   rules: {
+    name: {
+      required: true,
+    },
+    checkbox: {
+      required: true,
+    },
     tel: {
       required: true,
     },
