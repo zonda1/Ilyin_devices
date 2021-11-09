@@ -47,7 +47,7 @@
       padding: 13px 0 0 24px;
 
       &::placeholder {
-        color: $white;
+        color: rgba($color: $white, $alpha: 0.7);
       }
     }
 
@@ -61,7 +61,7 @@
       padding: 0 0 0 24px;
 
       &::placeholder {
-        color: $white;
+        color: rgba($color: $white, $alpha: 0.7);
       }
     }
 
@@ -82,7 +82,7 @@
       padding: 0 0 0 48px;
     }
 
-    & input + label::before {
+    & input+label::before {
       content: "";
       position: absolute;
       left: 0;
@@ -90,9 +90,10 @@
       width: 16px;
       height: 16px;
       border: 1px solid $white;
+      cursor: pointer;
     }
 
-    & input:checked + label::after {
+    & input:checked+label::after {
       content: "";
       position: absolute;
       top: 5px;

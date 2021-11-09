@@ -29,7 +29,7 @@
         bottom: 0;
         width: 200vw;
         height: 1px;
-        background-color: #626962;
+        background-color: rgba($color: #626962, $alpha: 0.2);
       }
 
       & li {
@@ -93,7 +93,7 @@
 
     @media (max-width: $mobile-max-width) {
       flex: 1 0 100%;
-      padding: 30px 0 0 0;
+      padding: 30px 0 24px 0;
       position: relative;
 
       &::after {
@@ -103,13 +103,13 @@
         bottom: 0;
         width: 200vw;
         height: 1px;
-        background-color: #626962;
+        background-color: rgba($color: #626962, $alpha: 0.2);
       }
     }
 
 
     & h3 {
-      margin: 0 0 24px 0;
+      margin: 0 0 0 0;
 
       @include font-parametrs(400, 15px, 16px);
 
@@ -125,6 +125,7 @@
       flex-direction: column;
       flex-wrap: wrap;
       color: rgba($dark-blue, 0.5);
+      margin: 24px 0 0 0;
 
 
       & li {
@@ -151,13 +152,15 @@
 
       @media (max-width: $mobile-max-width) {
         display: none;
+
       }
     }
 
     &.active ul,
     &.no-js ul {
       display: block;
-      margin: 0 0 24px;
+      height: inherit;
+      margin: 24px 0 0;
     }
 
     &.no-js .tumbler {
@@ -171,7 +174,7 @@
     @media (max-width: $tablet-max-width) {
       flex: 1 0 47.033%;
       padding: 38px 0 0 0;
-      margin: 0 0 0 -5px;
+      margin: 0 0 0 -11px;
     }
 
     @media (max-width: $mobile-max-width) {

@@ -24,6 +24,11 @@ body {
   padding: 0;
   color: #666666;
   background-color: $white;
+
+  &--modal-open {
+    overflow-y: hidden;
+    height: 100vh;
+  }
 }
 
 .wrapper {

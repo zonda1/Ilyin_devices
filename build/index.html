@@ -63,17 +63,19 @@
             <p>Оставьте контакты, мы проконсультируем вас бесплатно в удобное время</p>
           </div>
           <form action="https://echo.htmlacademy.ru" method="POST" class="popup__form form" autocomplete="off">
-            <label for="popup-name"><input type="text" name="popup-name" id="popup-name" placeholder="Имя"></label>
+            <label for="popup-name"><input data-validate-field="name" type="text" name="popup-name" id="popup-name"
+                placeholder="Имя" required></label>
             <label for="popup-tel"><input data-validate-field="tel" type="tel" name="popup-tel" id="popup-tel"
                 placeholder="Телефон"></label>
-            <textarea name="question" id="question" cols="30" rows="10" placeholder="Ваш вопрос"></textarea>
+            <textarea name="question" id="question" cols="30" rows="10" placeholder="Ваш вопрос" required></textarea>
             <button class="button" type="submit">Отправить</button>
 
-            <input class="visually-hidden" id="popup-data" name="popup-data" type="checkbox"><label for="popup-data">Я
+            <input class="visually-hidden" data-validate-field="checkbox" id="popup-data" name="popup-data"
+              type="checkbox">
+            <label for="popup-data">Я
               согласен на
               обработку персональных
               данных</label>
-
           </form>
         </div>
       </section>
@@ -224,14 +226,16 @@
             <p>Мы проконсультируем Вас бесплатно</p>
           </div>
           <form action="https://echo.htmlacademy.ru" method="POST" class="feedback__form form" autocomplete="off">
-            <label for="name"><input type="text" name="name" id="name" placeholder="Имя" required></label>
+            <label for="name"><input data-validate-field="name" type="text" name="name" id="name" placeholder="Имя"
+                required></label>
             <label for="tel"><input type="tel" data-validate-field="tel" name="tel" id="tel"
                 placeholder="Телефон"></label>
             <textarea name="popup-question" id="popup-question" cols="30" rows="10" placeholder="Ваш вопрос"
               required></textarea>
             <button class="button" type="submit">Задать вопрос</button>
 
-            <input class="visually-hidden" id="data" name="data" type="checkbox"><label for="data">Я согласен на
+            <input class="visually-hidden" data-validate-field="checkbox" id="data" name="data" type="checkbox"><label
+              for="data">Я согласен на
               обработку персональных
               данных</label>
           </form>
@@ -272,6 +276,11 @@
               <li><a href="#">Комплектующие</a></li>
               <li><a href="#">Доставка</a></li>
               <li><a href="#">Контакты</a></li>
+
+              <!-- <li><a href="#">Монтаж печатных плат</a></li>
+              <li><a href="#">Комплектующие</a></li>
+              <li><a href="#">Доставка</a></li>
+              <li><a href="#">Контакты</a></li> -->
             </ul>
           </div>
           <div class="contacts__address contacts__contacts no-js">
@@ -287,7 +296,6 @@
               <li><a href="tel:+74955894050">+7 (495) 589-40-50</a></li>
               <li><a href="tel:+79250038767">+7 (925) 003-87-67</a></li>
               <li><a href="tel:+792692608079">+7 (926) 926-080-79</a></li>
-            </ul>
           </div>
         </div>
         <div class="row__lower copyright">

@@ -1,21 +1,21 @@
 .promo {
   background:
-    url("../../img/content/triangles-feedback.png") 82.5% 50% no-repeat,
-    url("../../img/content/promo-ruffle.png"),
+    url("../img/content/triangles-feedback.png") 82.5% 50% no-repeat,
+    url("../img/content/promo-ruffle.png"),
     $dark-blue;
 
 
   @media (max-width: $tablet-max-width) {
     background:
-      url("../../img/content/triangles-feedback.png") 179.5% -21%/520.82px 501.82px no-repeat,
-      url("../../img/content/promo-ruffle.png"),
+      url("../img/content/triangles-feedback.png") 179.5% -21%/520.82px 501.82px no-repeat,
+      url("../img/content/promo-ruffle.png"),
       $dark-blue;
   }
 
   @media (max-width: $mobile-max-width) {
     background:
-      url("../../img/content/triangles-feedback-mobile.png") 100% 0% no-repeat,
-      url("../../img/content/promo-ruffle.png"),
+      url("../img/content/triangles-feedback-mobile.png") 100% 0% no-repeat,
+      url("../img/content/promo-ruffle.png"),
       $dark-blue;
   }
 
@@ -23,27 +23,27 @@
     max-width: 1920px;
     margin: 0 auto;
     padding: 316px 177px 292px 249px;
-    background: url("../../img/content/board_dktp.png") 85.5% 71% no-repeat;
+    background: url("../img/content/board_dktp.png") 85.5% 71% no-repeat;
 
     @media (min-resolution: 2dppx) {
-      background: url("../../img/content/board_dktp@2x.png") 85.5% 71%/705px 515px no-repeat;
+      background: url("../img/content/board_dktp@2x.png") 85.5% 71%/705px 515px no-repeat;
     }
 
     @media (max-width: $tablet-max-width) {
       padding: 188px 212px 180px 88px;
-      background: url("../../img/content/board_dktp.png") 168.5% 33%/465px 340px no-repeat;
+      background: url("../img/content/board_dktp.png") 168.5% 33%/465px 340px no-repeat;
 
       @media (min-resolution: 2dppx) {
-        background: url("../../img/content/board_dktp@2x.png") 168.5% 33%/465px 340px no-repeat;
+        background: url("../img/content/board_dktp@2x.png") 168.5% 33%/465px 340px no-repeat;
       }
     }
 
     @media (max-width: $mobile-max-width) {
       padding: 286px 15px 87px 15px;
-      background: url("../../img/content/board_dktp.png") 136.5% 21.5%/301px 220px no-repeat;
+      background: url("../img/content/board_dktp.png") 136.5% 21.5%/301px 220px no-repeat;
 
       @media (min-resolution: 2dppx) {
-        background: url("../../img/content/board_dktp.png") 136.5% 21.5%/301px 220px no-repeat;
+        background: url("../img/content/board_dktp.png") 136.5% 21.5%/301px 220px no-repeat;
       }
     }
 
