@@ -11,7 +11,7 @@
   <link rel="preload" href="fonts/roboto-condensed-v19-latin_cyrillic-ext-regular.woff2" as="font" crossorigin>
   <link rel="preload" href="fonts/roboto-condensed-v19-latin_cyrillic-ext-700.woff2" as="font" crossorigin>
   <link rel="preload" href="fonts/pt-mono-v8-latin_cyrillic-ext-regular.woff2" as="font" crossorigin>
-  <link rel="stylesheet" href="css/style.min.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body class="page">
@@ -36,6 +36,22 @@
               </svg><span>+7 (495) 000 52 52</span></a>
           </li>
           <li><a href="#" class="page-header__button button">Заказать звонок</a></li>
+
+          <li>
+            <a href="mailto"><svg viewbox="0 0 19 14" width="19" height="14">
+                <use xlink:href="img/icons/sprite-icons/sprite.svg#mail"></use>
+              </svg><span>info@sd.ru</span></a>
+          </li>
+          <li>
+            <a href="mailto"><svg viewbox="0 0 19 14" width="19" height="14">
+                <use xlink:href="img/icons/sprite-icons/sprite.svg#mail"></use>
+              </svg><span>info@sd.ru</span></a>
+          </li>
+          <li>
+            <a href="mailto"><svg viewbox="0 0 19 14" width="19" height="14">
+                <use xlink:href="img/icons/sprite-icons/sprite.svg#mail"></use>
+              </svg><span>info@sd.ru</span></a>
+          </li>
         </ul>
       </div>
 
@@ -225,17 +241,20 @@
             <h2>Остались вопросы? Задайте их нам!</h2>
             <p>Мы проконсультируем Вас бесплатно</p>
           </div>
-          <form action="https://echo.htmlacademy.ru" method="POST" class="feedback__form form" autocomplete="off">
+          <form action="https://echo.htmlacademy.ru" method="POST" id="feedback-form" class="feedback__form form"
+            autocomplete="off">
             <label for="name"><input data-validate-field="name" type="text" name="name" id="name" placeholder="Имя"
                 required></label>
-            <label for="tel"><input type="tel" data-validate-field="tel" name="tel" id="tel"
-                placeholder="Телефон"></label>
+            <label for="tel">
+              <input type="tel" data-validate-field="tel" name="tel" id="tel" placeholder="Телефон">
+            </label>
             <textarea name="popup-question" id="popup-question" cols="30" rows="10" placeholder="Ваш вопрос"
               required></textarea>
             <button class="button" type="submit">Задать вопрос</button>
 
             <input class="visually-hidden" data-validate-field="checkbox" id="data" name="data" type="checkbox"><label
-              for="data">Я согласен на
+              for="data">Я
+              согласен на
               обработку персональных
               данных</label>
           </form>
@@ -310,9 +329,21 @@
     </footer>
 
   </div>
-  <script src="js/inputmask.min.js"></script>
-  <script src="js/just-validate.min.js"></script>
-  <script src="js/script.js"></script>
+  <template id="success">
+    <div class="success">
+      <p class="success__message">Ваши данные<br>успешно отправлены!</p>
+    </div>
+  </template>
+  <template id="error">
+    <div class="error">
+      <p class="error__message">Некорректно заполнена форма</p>
+      <button type="button" class="error__button">Попробовать снова</button>
+    </div>
+  </template>
+  <!-- <script src="js/inputmask.min.js"></script> -->
+  <!-- <script src="js/just-validate.min.js"></script> -->
+
+  <script type="module" src="js/script.js"></script>
 </body>
 
 </html>
