@@ -16,6 +16,9 @@ const reporter = require("postcss-reporter");
 const stylelint = require("stylelint");
 const svgstore = require("gulp-svgstore");
 const cheerio = require("gulp-cheerio");
+const Imask = require("imask");
+const browserify = require('gulp-browserify');
+const concat = require('gulp-concat');
 
 // Styles
 
@@ -28,9 +31,9 @@ const styles = () => {
       autoprefixer(),
       csso()
     ]))
-    .pipe(rename("style.min.css"))
+    .pipe(rename("style.css"))
     .pipe(sourcemap.write("."))
-    .pipe(gulp.dest("build/css"))
+    .pipe(gulp.dest("source/css"))
     .pipe(sync.stream());
 }
 
@@ -104,7 +107,7 @@ exports.clean = clean;
 const server = (done) => {
   sync.init({
     server: {
-      baseDir: 'build'
+      baseDir: 'source'
     },
     cors: true,
     notify: false,
@@ -154,6 +157,20 @@ exports.default = gulp.series(
   styles, server, watcher
 );
 
+
+gulp.task('libs', function () {
+  return gulp.src(['node_modules/imask/dist/imask.js'])
+    .pipe(gulp.dest('source/js'))
+});
+
+// gulp.task('js', function () {
+//   return gulp.src('source/js/**/*.js')
+
+//     .pipe(concat('main.js'))
+//     .pipe(gulp.dest('build/js'))
+// });
+
+
 // Build
 
 const build = gulp.series(
@@ -164,6 +181,7 @@ const build = gulp.series(
     styles,
     sprite,
     createWebp,
+    'libs',
   ),
 );
 
@@ -179,8 +197,15 @@ exports.default = gulp.series(
     styles,
     sprite,
     createWebp,
+    'libs',
   ),
   gulp.series(
     server,
     watcher
   ));
+
+
+gulp.task('hello', function (callback) {
+  console.log('Hello!');
+  callback();
+});
